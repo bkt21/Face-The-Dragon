@@ -25,6 +25,10 @@ public class FaceTheDragon {
         System.out.println(playerInfo);
         
         Game game1 = new Game();
+        
+        game1.setTime(7.00);
+        String gameTime = game1.toString();
+        System.out.println(gameTime);
     }
     
 }
