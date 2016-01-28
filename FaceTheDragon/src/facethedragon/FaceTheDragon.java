@@ -5,6 +5,7 @@
  */
 package facethedragon;
 
+import byui.cit260.FaceTheDragon.model.Game;
 import byui.cit260.FaceTheDragon.model.Player;
 
 /**
@@ -22,6 +23,8 @@ public class FaceTheDragon {
         player1.setName("Brittan Murrpsen");
         String playerInfo = player1.toString();
         System.out.println(playerInfo);
+        
+        Game game1 = new Game();
     }
     
 }
