@@ -13,6 +13,7 @@ import byui.cit260.FaceTheDragon.model.Weapons;
 
 import byui.cit260.FaceTheDragon.model.Map;
 import byui.cit260.FaceTheDragon.model.Location;
+import byui.cit260.FaceTheDragon.model.Armor;
 /**
  *
  * @author Murray
@@ -58,6 +59,12 @@ public class FaceTheDragon {
         farm.setDescription("You are in your farm, take a break and get ready.");
         String farmIntro = farm.getDescription();
         System.out.println(farmIntro);
+        
+        Armor armor1 = new Armor();
+        
+        armor1.setDefense(9);
+        int aDefense = armor1.getDefense();
+        System.out.println(aDefense);
     }
     
 }
