@@ -7,6 +7,7 @@ package facethedragon;
 
 import byui.cit260.FaceTheDragon.model.Game;
 import byui.cit260.FaceTheDragon.model.Player;
+import byui.cit260.FaceTheDragon.model.Character;
 
 /**
  *
@@ -29,6 +30,12 @@ public class FaceTheDragon {
         game1.setTime(7.00);
         String gameTime = game1.toString();
         System.out.println(gameTime);
+        
+        Character character1 = new Character();
+        
+        character1.setName("Barry Allen");
+        String characterName = character1.toString();
+        System.out.println(characterName);
     }
     
 }
