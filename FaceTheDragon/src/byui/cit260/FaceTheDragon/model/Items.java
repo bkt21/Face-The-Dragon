@@ -15,9 +15,10 @@ import java.util.Objects;
 public class Items implements Serializable{
     
     private String type;
-    private Double quantity;
-    private Double goldAmount;
+    private int quantity;
+    private int goldAmount;
     
+    //default constructors 
     public Items() {
     
     }
@@ -31,19 +32,19 @@ public class Items implements Serializable{
         this.type = type;
     }
 
-    public Double getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Double quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public Double getGoldAmount() {
+    public int getGoldAmount() {
         return goldAmount;
     }
 
-    public void setGoldAmount(Double goldAmount) {
+    public void setGoldAmount(int goldAmount) {
         this.goldAmount = goldAmount;
     }
     
@@ -90,3 +91,4 @@ public class Items implements Serializable{
     }
     
 }
+ 
