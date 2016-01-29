@@ -9,7 +9,7 @@ import byui.cit260.FaceTheDragon.model.Game;
 import byui.cit260.FaceTheDragon.model.Player;
 import byui.cit260.FaceTheDragon.model.Character;
 import byui.cit260.FaceTheDragon.model.Items;
-
+import byui.cit260.FaceTheDragon.model.Map;
 /**
  *
  * @author Murray
@@ -43,6 +43,12 @@ public class FaceTheDragon {
         item1.setGoldAmount(52.00);
         String amountOfGold = item1.toString();
         System.out.println(amountOfGold);
+        
+        Map map1 = new Map();
+        
+        map1.setRowCount(5);
+        int rowNumber = map1.getRowCount();
+        System.out.println(rowNumber);
     }
     
 }
