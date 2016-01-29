@@ -11,6 +11,8 @@ import byui.cit260.FaceTheDragon.model.Character;
 import byui.cit260.FaceTheDragon.model.Items;
 import byui.cit260.FaceTheDragon.model.Weapons;
 
+import byui.cit260.FaceTheDragon.model.Map;
+import byui.cit260.FaceTheDragon.model.Location;
 /**
  *
  * @author Murray
@@ -45,11 +47,17 @@ public class FaceTheDragon {
         int amountOfGold = item1.getGoldAmount();
         System.out.println(amountOfGold);
         
-        Weapons weapons1 = new Weapons();
+        Map map1 = new Map();
         
-        weapons1.setAttack(22);
-        int wAtt = weapons1.getAttack();
-        System.out.println(wAtt);
+        map1.setRowCount(5);
+        int rowNumber = map1.getRowCount();
+        System.out.println(rowNumber);
+        
+        Location farm = new Location();
+        
+        farm.setDescription("You are in your farm, take a break and get ready.");
+        String farmIntro = farm.getDescription();
+        System.out.println(farmIntro);
     }
     
 }
