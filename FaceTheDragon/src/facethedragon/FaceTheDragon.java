@@ -9,6 +9,7 @@ import byui.cit260.FaceTheDragon.model.Game;
 import byui.cit260.FaceTheDragon.model.Player;
 import byui.cit260.FaceTheDragon.model.Character;
 import byui.cit260.FaceTheDragon.model.Items;
+import byui.cit260.FaceTheDragon.model.Weapons;
 
 /**
  *
@@ -40,9 +41,15 @@ public class FaceTheDragon {
         
         Items item1 = new Items();
         
-        item1.setGoldAmount(52.00);
-        String amountOfGold = item1.toString();
+        item1.setGoldAmount(52);
+        int amountOfGold = item1.getGoldAmount();
         System.out.println(amountOfGold);
+        
+        Weapons weapons1 = new Weapons();
+        
+        weapons1.setAttack(22);
+        int wAtt = weapons1.getAttack();
+        System.out.println(wAtt);
     }
     
 }
