@@ -8,6 +8,7 @@ package facethedragon;
 import byui.cit260.FaceTheDragon.model.Game;
 import byui.cit260.FaceTheDragon.model.Player;
 import byui.cit260.FaceTheDragon.model.Character;
+import byui.cit260.FaceTheDragon.model.Items;
 
 /**
  *
@@ -36,6 +37,12 @@ public class FaceTheDragon {
         character1.setName("Barry Allen");
         String characterName = character1.toString();
         System.out.println(characterName);
+        
+        Items item1 = new Items();
+        
+        item1.setGoldAmount(52.00);
+        String amountOfGold = item1.toString();
+        System.out.println(amountOfGold);
     }
     
 }
