@@ -10,6 +10,7 @@ import byui.cit260.FaceTheDragon.model.Player;
 import byui.cit260.FaceTheDragon.model.Character;
 import byui.cit260.FaceTheDragon.model.Items;
 import byui.cit260.FaceTheDragon.model.Map;
+import byui.cit260.FaceTheDragon.model.Location;
 /**
  *
  * @author Murray
@@ -49,6 +50,12 @@ public class FaceTheDragon {
         map1.setRowCount(5);
         int rowNumber = map1.getRowCount();
         System.out.println(rowNumber);
+        
+        Location farm = new Location();
+        
+        farm.setDescription("You are in your farm, take a break and get ready.");
+        String farmIntro = farm.getDescription();
+        System.out.println(farmIntro);
     }
     
 }
