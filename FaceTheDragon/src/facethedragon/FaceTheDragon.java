@@ -14,6 +14,7 @@ import byui.cit260.FaceTheDragon.model.Weapons;
 import byui.cit260.FaceTheDragon.model.Map;
 import byui.cit260.FaceTheDragon.model.Location;
 import byui.cit260.FaceTheDragon.model.Armor;
+import byui.cit260.FaceTheDragon.model.Resources;
 /**
  *
  * @author Murray
@@ -65,6 +66,13 @@ public class FaceTheDragon {
         armor1.setDefense(9);
         int aDefense = armor1.getDefense();
         System.out.println(aDefense);
+        
+        Resources potion = new Resources();
+        
+        potion.setIncreaseHealth(10);
+        int heal = potion.getIncreaseHealth();
+        System.out.println(heal);
+        
     }
     
 }
