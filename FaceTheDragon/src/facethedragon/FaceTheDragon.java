@@ -15,6 +15,7 @@ import byui.cit260.FaceTheDragon.model.Map;
 import byui.cit260.FaceTheDragon.model.Location;
 import byui.cit260.FaceTheDragon.model.Armor;
 import byui.cit260.FaceTheDragon.model.Resources;
+import byui.cit260.FaceTheDragon.model.Misc;
 /**
  *
  * @author Murray
@@ -73,6 +74,14 @@ public class FaceTheDragon {
         int heal = potion.getIncreaseHealth();
         System.out.println(heal);
         
+        Misc key = new Misc();
+        
+        key.setName(dragonKey);
+        key.setDescription("This key will allow you to enter the Dragon's Lair.");
+        String dkey = key.getName();
+        string dragDescKey = key.getDescription();
+        System.out.println(dkey);
+        System.out.println(dragDescKey);
     }
     
 }
