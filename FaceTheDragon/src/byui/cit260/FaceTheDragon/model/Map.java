@@ -37,6 +37,42 @@ public class Map implements Serializable{
     public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
-    
+
+    //hashCode
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 19 * hash + this.rowCount;
+        hash = 19 * hash + this.columnCount;
+        return hash;
+    }
+
+    //equals
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Map other = (Map) obj;
+        if (this.rowCount != other.rowCount) {
+            return false;
+        }
+        if (this.columnCount != other.columnCount) {
+            return false;
+        }
+        return true;
+    }
+
+    // toString
+    @Override
+    public String toString() {
+        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
+    } 
    
 }
