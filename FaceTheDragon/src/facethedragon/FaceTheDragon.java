@@ -76,10 +76,10 @@ public class FaceTheDragon {
         
         Misc key = new Misc();
         
-        key.setName(dragonKey);
+        key.setName("dragonKey");
         key.setDescription("This key will allow you to enter the Dragon's Lair.");
         String dkey = key.getName();
-        string dragDescKey = key.getDescription();
+        String dragDescKey = key.getDescription();
         System.out.println(dkey);
         System.out.println(dragDescKey);
     }
