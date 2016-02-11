@@ -23,17 +23,50 @@ public class BattleControlTest {
      */
     @Test
     public void testAttack() {
-        System.out.println("attack");
+        System.out.println("Test 1");
         Character Attacker = new Character();
         Character Defender = new Character();
         Attacker.setAttack(15);
-        Defender.setDefense(5);
+        Defender.setDefense(10);
         Defender.setHealth(10);
         BattleControl instance = new BattleControl();
-        int expResult = 0;
+        int expResult = 5;
         int result = instance.attack(Attacker, Defender);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+        
+        /***
+         * Test 2
+         */
+        System.out.println("Test 2");
+        Attacker.setAttack(-5);
+        Defender.setDefense(5);
+        Defender.setHealth(15);
+        expResult = -1;
+        result = instance.attack(Attacker, Defender);
+        assertEquals(expResult, result);
+        
+        /***
+         * Test 3
+         */
+        System.out.println("Test 3");
+        Attacker.setAttack(-5);
+        Defender.setDefense(5);
+        Defender.setHealth(15);
+        expResult = -1;
+        result = instance.attack(Attacker, Defender);
+        assertEquals(expResult, result);
+        
+        /***
+         * Test 2
+         */
+        System.out.println("Test 2");
+        Attacker.setAttack(-5);
+        Defender.setDefense(5);
+        Defender.setHealth(15);
+        expResult = -1;
+        result = instance.attack(Attacker, Defender);
+        assertEquals(expResult, result);
+        
     }
     
 }

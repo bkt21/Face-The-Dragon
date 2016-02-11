@@ -16,12 +16,12 @@ public class Character implements Serializable{
    
    private String name; 
    private String description;
-   private String attack; 
-   private String defense;
-   private Double level;
-   private Double gold;
-   private Double maxHealth;
-   private Double health;
+   private int attack; 
+   private int defense;
+   private int level;
+   private int gold;
+   private int maxHealth;
+   private int health;
 
     public Character() {
    
@@ -45,51 +45,51 @@ public class Character implements Serializable{
         this.description = description;
     }
 
-    public String getAttack() {
+    public int getAttack() {
         return attack;
     }
 
-    public void setAttack(String attack) {
+    public void setAttack(int attack) {
         this.attack = attack;
     }
 
-    public String getDefense() {
+    public int getDefense() {
         return defense;
     }
 
-    public void setDefense(String defense) {
+    public void setDefense(int defense) {
         this.defense = defense;
     }
 
-    public Double getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(Double level) {
+    public void setLevel(int level) {
         this.level = level;
     }
 
-    public Double getGold() {
+    public int getGold() {
         return gold;
     }
 
-    public void setGold(Double gold) {
+    public void setGold(int gold) {
         this.gold = gold;
     }
 
-    public Double getMaxHealth() {
+    public int getMaxHealth() {
         return maxHealth;
     }
 
-    public void setMaxHealth(Double maxHealth) {
+    public void setMaxHealth(int maxHealth) {
         this.maxHealth = maxHealth;
     }
 
-    public Double getHealth() {
+    public int getHealth() {
         return health;
     }
 
-    public void setHealth(Double health) {
+    public void setHealth(int health) {
         this.health = health;
     }
     
