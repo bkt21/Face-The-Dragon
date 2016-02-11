@@ -1,0 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package byui.cit260.FaceTheDragon.control;
+
+import byui.cit260.FaceTheDragon.model.Character;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Murray
+ */
+public class BattleControlTest {
+    
+    public BattleControlTest() {
+    }
+
+    /**
+     * Test of attack method, of class BattleControl.
+     */
+    @Test
+    public void testAttack() {
+        System.out.println("attack");
+        Character Attacker = new Character();
+        Character Defender = new Character();
+        Attacker.setAttack(15);
+        Defender.setDefense(5);
+        Defender.setHealth(10);
+        BattleControl instance = new BattleControl();
+        int expResult = 0;
+        int result = instance.attack(Attacker, Defender);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    
+}
