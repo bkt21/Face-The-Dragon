@@ -49,21 +49,53 @@ public class BattleControlTest {
          * Test 3
          */
         System.out.println("Test 3");
-        Attacker.setAttack(-5);
-        Defender.setDefense(5);
+        Attacker.setAttack(15);
+        Defender.setDefense(-5);
         Defender.setHealth(15);
-        expResult = -1;
+        expResult = -3;
         result = instance.attack(Attacker, Defender);
         assertEquals(expResult, result);
         
         /***
-         * Test 2
+         * Test 4
          */
-        System.out.println("Test 2");
-        Attacker.setAttack(-5);
+        System.out.println("Test 4");
+        Attacker.setAttack(15);
         Defender.setDefense(5);
-        Defender.setHealth(15);
+        Defender.setHealth(-5);
+        expResult = -2;
+        result = instance.attack(Attacker, Defender);
+        assertEquals(expResult, result);
+        
+        System.out.println("Test 5");
+        Attacker.setAttack(-5);
+        Defender.setDefense(-5);
+        Defender.setHealth(-5);
         expResult = -1;
+        result = instance.attack(Attacker, Defender);
+        assertEquals(expResult, result);
+        
+        System.out.println("Test 6");
+        Attacker.setAttack(30);
+        Defender.setDefense(25);
+        Defender.setHealth(1);
+        expResult = 0;
+        result = instance.attack(Attacker, Defender);
+        assertEquals(expResult, result);
+        
+        System.out.println("Test 7");
+        Attacker.setAttack(100);
+        Defender.setDefense(1);
+        Defender.setHealth(100);
+        expResult = 1;
+        result = instance.attack(Attacker, Defender);
+        assertEquals(expResult, result);
+        
+        System.out.println("Test 8");
+        Attacker.setAttack(25);
+        Defender.setDefense(50);
+        Defender.setHealth(100);
+        expResult = 100;
         result = instance.attack(Attacker, Defender);
         assertEquals(expResult, result);
         

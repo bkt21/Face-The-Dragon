@@ -31,8 +31,15 @@ public class BattleControl {
 
 
         damageDealt = Attacker.getAttack() - Defender.getDefense();
+        if(damageDealt < 0){
+            damageDealt = 0;
+        }
+        
         newHealth = Defender.getHealth() - damageDealt;
         
+        if(newHealth < 0){
+            newHealth = 0;
+        }
         Defender.setHealth(newHealth);
 return Defender.getHealth();
     }
