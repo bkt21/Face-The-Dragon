@@ -50,7 +50,7 @@ return Defender.getHealth();
         if (Player.getExp() < 0) {
             return -1;
         }
-        if (BadGuy.getExp() < 0) {
+        if (BadGuy.getExp() < 1) {
             return -2;
         }
         
@@ -58,11 +58,13 @@ return Defender.getHealth();
         Player.setExp(newExp);
         
         int i = 0;
-        while(i<10){
-            if(Player.getExp() < (i*10)){
+        
+        while (i < 12){
+            if(Player.getExp() < (i * 10)){
             Player.setLevel(i);
-        }
-        i++;
+            break;
+            }
+            i++;
         }
 
         return Player.getLevel();

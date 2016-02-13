@@ -23,7 +23,7 @@ public class BattleControlTest {
      */
     @Test
     public void testAttack() {
-        System.out.println("Test 1");
+        System.out.println("Test 1 att");
         Character Attacker = new Character();
         Character Defender = new Character();
         Attacker.setAttack(15);
@@ -37,7 +37,7 @@ public class BattleControlTest {
         /***
          * Test 2
          */
-        System.out.println("Test 2");
+        System.out.println("Test 2 att");
         Attacker.setAttack(-5);
         Defender.setDefense(5);
         Defender.setHealth(15);
@@ -48,7 +48,7 @@ public class BattleControlTest {
         /***
          * Test 3
          */
-        System.out.println("Test 3");
+        System.out.println("Test 3 att");
         Attacker.setAttack(15);
         Defender.setDefense(-5);
         Defender.setHealth(15);
@@ -59,7 +59,7 @@ public class BattleControlTest {
         /***
          * Test 4
          */
-        System.out.println("Test 4");
+        System.out.println("Test 4 att");
         Attacker.setAttack(15);
         Defender.setDefense(5);
         Defender.setHealth(-5);
@@ -67,7 +67,7 @@ public class BattleControlTest {
         result = instance.attack(Attacker, Defender);
         assertEquals(expResult, result);
         
-        System.out.println("Test 5");
+        System.out.println("Test 5 att");
         Attacker.setAttack(-5);
         Defender.setDefense(-5);
         Defender.setHealth(-5);
@@ -75,7 +75,7 @@ public class BattleControlTest {
         result = instance.attack(Attacker, Defender);
         assertEquals(expResult, result);
         
-        System.out.println("Test 6");
+        System.out.println("Test 6 att");
         Attacker.setAttack(30);
         Defender.setDefense(25);
         Defender.setHealth(1);
@@ -83,7 +83,7 @@ public class BattleControlTest {
         result = instance.attack(Attacker, Defender);
         assertEquals(expResult, result);
         
-        System.out.println("Test 7");
+        System.out.println("Test 7 att");
         Attacker.setAttack(100);
         Defender.setDefense(1);
         Defender.setHealth(100);
@@ -91,14 +91,84 @@ public class BattleControlTest {
         result = instance.attack(Attacker, Defender);
         assertEquals(expResult, result);
         
-        System.out.println("Test 8");
+        System.out.println("Test 8 att");
         Attacker.setAttack(25);
         Defender.setDefense(50);
         Defender.setHealth(100);
         expResult = 100;
         result = instance.attack(Attacker, Defender);
         assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of expGain method, of class BattleControl.
+     */
+    @Test
+    public void testExpGain() {
+        System.out.println("Test 1 exp");
+        Character Player = new Character();
+        Character BadGuy = new Character();
+        BattleControl instance = new BattleControl();
+        Player.setLevel(1);
+        Player.setExp(0);
+        BadGuy.setExp(10);
+        
+        int expResult = 2;
+        int result = instance.expGain(Player, BadGuy);
+        assertEquals(expResult, result);
+        
+        
+        System.out.println("Test 2 exp");
+        Player.setExp(30);
+        BadGuy.setExp(-5);
+        expResult = -2;
+        result = instance.expGain(Player, BadGuy);
+        assertEquals(expResult, result);
+        
+        System.out.println("Test 3 exp");
+        Player.setExp(-5);
+        BadGuy.setExp(10);
+        expResult = -1;
+        result = instance.expGain(Player, BadGuy);
+        assertEquals(expResult, result);
+        
+        System.out.println("Test 4 exp");
+        Player.setExp(1);
+        BadGuy.setExp(0);
+        expResult = -2;
+        result = instance.expGain(Player, BadGuy);
+        assertEquals(expResult, result);
+        
+        System.out.println("Test 5 exp");
+        Player.setExp(-5);
+        BadGuy.setExp(-5);
+        expResult = -1;
+        result = instance.expGain(Player, BadGuy);
+        assertEquals(expResult, result);
+        
+        System.out.println("Test 6 exp");
+        Player.setExp(100);
+        BadGuy.setExp(5);
+        expResult = 11;
+        result = instance.expGain(Player, BadGuy);
+        assertEquals(expResult, result);
+        
+        System.out.println("Test 7 exp");
+        Player.setExp(0);
+        BadGuy.setExp(50);
+        expResult = 6;
+        result = instance.expGain(Player, BadGuy);
+        assertEquals(expResult, result);
+        
+        System.out.println("Test 8 exp");
+        Player.setExp(0);
+        BadGuy.setExp(5);
+        expResult = 1;
+        result = instance.expGain(Player, BadGuy);
+        assertEquals(expResult, result);
         
     }
+    
+
     
 }
