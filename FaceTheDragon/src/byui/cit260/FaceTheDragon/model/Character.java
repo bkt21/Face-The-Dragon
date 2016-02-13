@@ -22,6 +22,9 @@ public class Character implements Serializable{
    private int gold;
    private int maxHealth;
    private int health;
+   private int exp;
+   
+   
 
     public Character() {
    
@@ -92,6 +95,16 @@ public class Character implements Serializable{
     public void setHealth(int health) {
         this.health = health;
     }
+
+    public int getExp() {
+        return exp;
+    }
+
+    public void setExp(int exp) {
+        this.exp = exp;
+    }
+    
+    
     
     //hashCode and equals
 
@@ -106,6 +119,7 @@ public class Character implements Serializable{
         hash = 29 * hash + Objects.hashCode(this.gold);
         hash = 29 * hash + Objects.hashCode(this.maxHealth);
         hash = 29 * hash + Objects.hashCode(this.health);
+        hash = 29 * hash + Objects.hashCode(this.exp);
         return hash;
     }
 
@@ -145,6 +159,9 @@ public class Character implements Serializable{
         if (!Objects.equals(this.health, other.health)) {
             return false;
         }
+        if (!Objects.equals(this.exp, other.exp)) {
+            return false;
+        }
         return true;
     }
     
@@ -152,7 +169,7 @@ public class Character implements Serializable{
 
     @Override
     public String toString() {
-        return "Character{" + "name=" + name + ", description=" + description + ", attack=" + attack + ", defense=" + defense + ", level=" + level + ", gold=" + gold + ", maxHealth=" + maxHealth + ", health=" + health + '}';
+        return "Character{" + "name=" + name + ", description=" + description + ", attack=" + attack + ", defense=" + defense + ", level=" + level + ", gold=" + gold + ", maxHealth=" + maxHealth + ", health=" + health + ", exp=" + exp + '}';
     }
     
     

@@ -43,4 +43,28 @@ public class BattleControl {
         Defender.setHealth(newHealth);
 return Defender.getHealth();
     }
+    
+    public int expGain(Character Player, Character BadGuy){
+    
+        
+        if (Player.getExp() < 0) {
+            return -1;
+        }
+        if (BadGuy.getExp() < 0) {
+            return -2;
+        }
+        
+        int newExp = Player.getExp() + BadGuy.getExp();
+        Player.setExp(newExp);
+        
+        int i = 0;
+        while(i<10){
+            if(Player.getExp() < (i*10)){
+            Player.setLevel(i);
+        }
+        i++;
+        }
+
+        return Player.getLevel();
+    }
 }
