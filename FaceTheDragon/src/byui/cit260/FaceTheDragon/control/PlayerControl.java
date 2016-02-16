@@ -20,20 +20,26 @@ public class PlayerControl {
     public int increaseHealth(Resources potion, int potionToUse, Character health){
             
             int newHealth; 
+            int healthToAdd;
             
-            if(potionInventory <= 0)then 
-            return -1
-
-            if(potionsToUse > potionInventory)then
-            return -2
-
-            if(currentHealth >= 100 & currentHealth<= 0)then
-            return -3
-
-            if(potionsToUse * 10 + currentHealth >= 100)then
-            return -4
-
             
+            if(Resources.getPotion() <= 0){ 
+            return -1;}
+
+            if(potionsToUse > potion){
+            return -2;}
+
+            if(Character.getHealth() >= 100 & Character.getHealth() <= 0){
+            return -3;}
+
+            if(potionToUse * 10 + Character.getHealth() >= 100){
+            return -4;}
+
+           healthToAdd = potionsToUse * 10;
+           newHealth = Character.getHealth() + healthToAdd ;
+
+
+           return newHealth 
             
     }
             
