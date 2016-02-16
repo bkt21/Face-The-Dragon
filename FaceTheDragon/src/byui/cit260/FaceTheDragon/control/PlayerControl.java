@@ -23,19 +23,19 @@ public class PlayerControl {
             int healthToAdd;
             
             
-            if(Potion.getPotion() <= 0){ 
+            if(Potion.getQuantity() <= 0){ 
             return -1;}
 
-            if(potionsToUse > Potion.getPotion()){
+            if(potionsToUse > Potion.getQuantity()){
             return -2;}
 
-            if(Player.getHealth() >= 100 & Player.getHealth() <= 0){
+            if(Player.getHealth() >= 500 || Player.getHealth() <= 0){
             return -3;}
 
-            if(potionsToUse * 10 + Player.getHealth() >= 100){
+            if((potionsToUse * Potion.getIncreaseHealth()) + Player.getHealth() >= Player.getMaxHealth()){
             return -4;}
 
-           healthToAdd = potionsToUse * 10;
+           healthToAdd = potionsToUse * Potion.getIncreaseHealth();
            newHealth = Player.getHealth() + healthToAdd ;
 
 
