@@ -18,11 +18,11 @@ public class Resources extends Items{
     }
     
     //getters and setters
-    public int getIncreaseHealth() {
+    public int getPotion() {
         return potion;
     }
 
-    public void setIncreaseHealth(int potion) {
+    public void setPotion(int potion) {
         this.potion = potion;
     }
     
