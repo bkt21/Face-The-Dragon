@@ -17,29 +17,29 @@ public class PlayerControl {
     /* 
      * I am not sure how to bring in user input in this, would it be an action the function does? (ask for input) 
      */
-    public int increaseHealth(Resources potion, int potionToUse, Character health){
+    public int increaseHealth(Resources Potion, int potionToUse, Character Player){
             
             int newHealth; 
             int healthToAdd;
             
             
-            if(Resources.getPotion() <= 0){ 
+            if(Potion.getPotion() <= 0){ 
             return -1;}
 
-            if(potionsToUse > potion){
+            if(potionToUse > Potion.getPotion()){
             return -2;}
 
-            if(Character.getHealth() >= 100 & Character.getHealth() <= 0){
+            if(Player.getHealth() >= 100 & Player.getHealth() <= 0){
             return -3;}
 
-            if(potionToUse * 10 + Character.getHealth() >= 100){
+            if(potionToUse * 10 + Player.getHealth() >= 100){
             return -4;}
 
            healthToAdd = potionsToUse * 10;
-           newHealth = Character.getHealth() + healthToAdd ;
+           newHealth = Player.getHealth() + healthToAdd ;
 
 
-           return newHealth 
+           return newHealth;
             
     }
             

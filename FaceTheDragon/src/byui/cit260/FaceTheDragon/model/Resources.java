@@ -11,7 +11,7 @@ package byui.cit260.FaceTheDragon.model;
  */
 public class Resources extends Items{
     
-    private int potion;
+    private int increaseHealth;
 
     public Resources() {
         super();
@@ -19,18 +19,18 @@ public class Resources extends Items{
     
     //getters and setters
     public int getPotion() {
-        return potion;
+        return increaseHealth;
     }
 
-    public void setPotion(int potion) {
-        this.potion = potion;
+    public void setPotion(int increaseHealth) {
+        this.increaseHealth = increaseHealth;
     }
     
     //hashcode
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 19 * hash + this.potion;
+        hash = 19 * hash + this.increaseHealth;
         return hash;
     }
 
@@ -47,7 +47,7 @@ public class Resources extends Items{
             return false;
         }
         final Resources other = (Resources) obj;
-        if (this.potion != other.potion) {
+        if (this.increaseHealth != other.increaseHealth) {
             return false;
         }
         return true;
@@ -56,7 +56,7 @@ public class Resources extends Items{
     //to string
     @Override
     public String toString() {
-        return "Resources{" + "potion=" + potion + '}';
+        return "Resources{" + "increaseHealth=" + increaseHealth + '}';
     }
     
 }
