@@ -14,9 +14,7 @@ import byui.cit260.FaceTheDragon.model.Character;
  */
 public class PlayerControl {
     
-    /* 
-     * I am not sure how to bring in user input in this, would it be an action the function does? (ask for input) 
-     */
+
     public int increaseHealth(Resources Potion, int potionsToUse, Character Player){
             
             int newHealth; 
