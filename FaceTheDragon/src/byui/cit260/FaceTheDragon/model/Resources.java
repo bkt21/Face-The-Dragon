@@ -11,7 +11,8 @@ package byui.cit260.FaceTheDragon.model;
  */
 public class Resources extends Items{
     
-    private int increaseHealth;
+    private int increaseHealth; 
+    
 
     public Resources() {
         super();

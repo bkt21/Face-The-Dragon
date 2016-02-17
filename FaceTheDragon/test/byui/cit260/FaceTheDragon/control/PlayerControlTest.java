@@ -24,13 +24,13 @@ public class PlayerControlTest {
      */
     @Test
     public void testIncreaseHealth() {
-        System.out.println("increaseHealth");
+        System.out.println("Test 1 IncreseHealth");
         Resources Potion = new Resources ();
-        Potion.setQuantity(5);
-        int potionsToUse = 1;
         Character Player = new Character();
+        PlayerControl instance = new PlayerControl(); 
+        Potion.setQuantity(5);
         Player.setHealth(30);
-        PlayerControl instance = new PlayerControl();
+        int potionsToUse = 1;
         int expResult = -4;
         int result = instance.increaseHealth(Potion, potionsToUse, Player);
         assertEquals(expResult, result);
