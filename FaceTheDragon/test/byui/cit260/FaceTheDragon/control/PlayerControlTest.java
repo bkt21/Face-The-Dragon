@@ -26,10 +26,10 @@ public class PlayerControlTest {
     public void testIncreaseHealth() {
         System.out.println("increaseHealth");
         Resources Potion = null;
-        int potionsToUse = 0;
+        int potionsToUse = 5;
         Character Player = null;
         PlayerControl instance = new PlayerControl();
-        int expResult = 0;
+        int expResult = 95;
         int result = instance.increaseHealth(Potion, potionsToUse, Player);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
