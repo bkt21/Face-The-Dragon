@@ -31,11 +31,11 @@ public class PlayerControlTest {
         Character Player = new Character();
         Player.setHealth(30);
         PlayerControl instance = new PlayerControl();
-        int expResult = 0;
+        int expResult = -4;
         int result = instance.increaseHealth(Potion, potionsToUse, Player);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
 }

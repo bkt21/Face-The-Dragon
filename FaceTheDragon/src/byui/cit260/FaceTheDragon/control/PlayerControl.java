@@ -20,7 +20,6 @@ public class PlayerControl {
             int newHealth; 
             int healthToAdd;
             
-            
             if(Potion.getQuantity() <= 0){ 
             return -1;}
 
