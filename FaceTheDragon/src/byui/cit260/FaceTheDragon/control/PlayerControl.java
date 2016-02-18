@@ -31,6 +31,19 @@ public class PlayerControl {
 
             if((potionsToUse * Potion.getIncreaseHealth()) + Player.getHealth() >= Player.getMaxHealth()){
             return -4;}
+            
+            //this last if statement above should be combined with the one below
+            
+            /*
+            for example:
+            if((potionsToUse * Potion.getIncreaseHealth()) + Player.getHealth() >= Player.getMaxHealth()){
+            player.setHealth(player.getMaxHealth);
+            }
+            else{
+            healthToAdd = potionsToUse * Potion.getIncreaseHealth();
+            newHealth = Player.getHealth() + healthToAdd ;
+            }
+            */
 
            healthToAdd = potionsToUse * Potion.getIncreaseHealth();
            newHealth = Player.getHealth() + healthToAdd ;
