@@ -12,8 +12,29 @@ package byui.cit260.FaceTheDragon.view;
 public class StartProgramView {
 
     public void displayStartProgramView() {
-        System.out.println("\n***displayStartProgram function was called***");
+        boolean done = false;
+        
+        do {
+            String playersName = this.getPlayersName();
+            if(playersName.toUpperCase().equals("Q"))
+                return;
+            
+            done = this.doAction(playersName);
+            
+        }while (!done);
+        
     }
+    
+    private String getPlayersName(){
+        System.out.println("\n***getPlayersNam() was called ***");
+        return "Joe";
+    }
+    
+    private boolean doAction(String playersName){
+        System.out.println("\n***doAction() was called ***");
+        return true;
+    }
+    
     private String promptMessage;
     
     public StartProgramView() {
