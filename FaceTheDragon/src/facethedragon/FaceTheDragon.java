@@ -28,7 +28,7 @@ public class FaceTheDragon {
      */
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView();
-        StartProgramView.displayStartProgramView();
+        startProgramView.displayStartProgramView();
     }
     
 }
