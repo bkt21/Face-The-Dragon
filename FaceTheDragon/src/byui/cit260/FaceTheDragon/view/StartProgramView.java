@@ -5,6 +5,10 @@
  */
 package byui.cit260.FaceTheDragon.view;
 
+import byui.cit260.FaceTheDragon.control.GameControl;
+import byui.cit260.FaceTheDragon.model.Player;
+import java.util.Scanner;
+
 /**
  *
  * @author Murray
@@ -26,12 +30,43 @@ public class StartProgramView {
     }
     
     private String getPlayersName(){
-        System.out.println("\n***getPlayersNam() was called ***");
-        return "Joe";
+        Scanner keyboard = new Scanner(System.in); 
+        String value = "";
+        boolean valid = false;
+        
+        while(!valid){
+        System.out.println("\n" + this.promptMessage);
+        
+        value = keyboard.nextLine();
+        value = value.trim();
+        
+        if (value.length() < 1) {
+            System.out.println("\nInvalid value: value cannot be blank");
+            continue;
+            }
+            break;
+        }
+        
+        return value;
     }
     
+    
     private boolean doAction(String playersName){
-        System.out.println("\n***doAction() was called ***");
+        if(playersName.length() < 2){
+            System.out.println("\nInvalid players name: "
+                    + "The name must be greater than one character in length");
+            return false;
+        }
+        
+        Player player = GameControl.createPlayer(playersName);
+        
+        if (player == null) {
+            System.out.println("\nError creating the player");
+            return false;
+        }
+        
+        this.displayNextView();
+        
         return true;
     }
     
@@ -49,4 +84,7 @@ public class StartProgramView {
         "Welcome to Face The Dragon!"
         );
     }
+
+    private void displayNextView() {
+        System.out.println("\n*** displayNextView() function was called ***");    }
 }
