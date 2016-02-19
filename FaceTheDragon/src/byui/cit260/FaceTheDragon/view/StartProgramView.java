@@ -10,6 +10,10 @@ package byui.cit260.FaceTheDragon.view;
  * @author Murray
  */
 public class StartProgramView {
+
+    public static void displayStartProgramView() {
+        System.out.println("\n***displayStartProgram function was called***");
+    }
     private String promptMessage;
     
     public StartProgramView() {

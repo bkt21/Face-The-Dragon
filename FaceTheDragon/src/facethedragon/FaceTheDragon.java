@@ -16,6 +16,7 @@ import byui.cit260.FaceTheDragon.model.Location;
 import byui.cit260.FaceTheDragon.model.Armor;
 import byui.cit260.FaceTheDragon.model.Resources;
 import byui.cit260.FaceTheDragon.model.Misc;
+import byui.cit260.FaceTheDragon.view.StartProgramView;
 /**
  *
  * @author Murray
@@ -26,62 +27,8 @@ public class FaceTheDragon {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Player player1 = new Player();
-        
-        player1.setName("Brittan Murrpsen");
-        String playerInfo = player1.toString();
-        System.out.println(playerInfo);
-        
-        Game game1 = new Game();
-        
-        game1.setTime(7.00);
-        String gameTime = game1.toString();
-        System.out.println(gameTime);
-        
-        Character character1 = new Character();
-        
-        character1.setName("Barry Allen");
-        String characterName = character1.toString();
-        System.out.println(characterName);
-        
-        Items item1 = new Items();
-        
-        item1.setGoldAmount(52);
-        int amountOfGold = item1.getGoldAmount();
-        System.out.println(amountOfGold);
-        
-        Map map1 = new Map();
-        
-        map1.setRowCount(5);
-        int rowNumber = map1.getRowCount();
-        System.out.println(rowNumber);
-        
-        Location farm = new Location();
-        
-        farm.setDescription("You are in your farm, take a break and get ready.");
-        String farmIntro = farm.getDescription();
-        System.out.println(farmIntro);
-        
-        Armor armor1 = new Armor();
-        
-        armor1.setDefense(9);
-        int aDefense = armor1.getDefense();
-        System.out.println(aDefense);
-        
-        Resources potion = new Resources();
-        
-        potion.setIncreaseHealth(10);
-        int heal = potion.getIncreaseHealth();
-        System.out.println(heal);
-        
-        Misc key = new Misc();
-        
-        key.setName("dragonKey");
-        key.setDescription("This key will allow you to enter the Dragon's Lair.");
-        String dkey = key.getName();
-        String dragDescKey = key.getDescription();
-        System.out.println(dkey);
-        System.out.println(dragDescKey);
+        StartProgramView startProgramView = new StartProgramView();
+        StartProgramView.displayStartProgramView();
     }
     
 }
