@@ -65,7 +65,7 @@ public class StartProgramView {
             return false;
         }
         
-        this.displayNextView();
+        this.displayNextView(player);
         
         return true;
     }
@@ -85,6 +85,14 @@ public class StartProgramView {
         );
     }
 
-    private void displayNextView() {
-        System.out.println("\n*** displayNextView() function was called ***");    }
+    private void displayNextView(Player player) {
+        System.out.println("\n================================================"
+                         + "\nWelcome to Face The Dragon " + player.getName()
+                         + "\nGood Luck and have fun!"
+                         + "\n================================================");
+        
+        MainMenuView mainMenuView = new MainMenuView();
+        
+        mainMenuView.displayMainMenuView();
+    }
 }
