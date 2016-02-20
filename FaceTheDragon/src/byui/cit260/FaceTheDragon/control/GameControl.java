@@ -6,6 +6,7 @@
 package byui.cit260.FaceTheDragon.control;
 
 import byui.cit260.FaceTheDragon.model.Player;
+import facethedragon.FaceTheDragon;
 
 /**
  *
@@ -13,9 +14,16 @@ import byui.cit260.FaceTheDragon.model.Player;
  */
 public class GameControl {
 
-    public static Player createPlayer(String playersName) {
-        System.out.println("\n*** createPlayer() function was called ***");
-        return new Player();
+    public static Player createPlayer(String name) {
+        if (name == null){
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(name);
+        
+        FaceTheDragon.setPlayer(player);
+        return player;
     }
     
 }
