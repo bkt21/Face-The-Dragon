@@ -29,11 +29,12 @@ public class PlayerControl {
             if(Player.getHealth() >= 500 || Player.getHealth() <= 0){
             return -3;}
 
+            
             if((potionsToUse * Potion.getIncreaseHealth()) + Player.getHealth() >= Player.getMaxHealth()){
-                player.setHealth(player.getMaxHealth);
-            return -4;}
-            
-            
+                Player.setHealth(Player.getMaxHealth());
+                newHealth = Player.getMaxHealth();
+            }
+
             else{
             healthToAdd = potionsToUse * Potion.getIncreaseHealth();
             newHealth = Player.getHealth() + healthToAdd ;
