@@ -31,7 +31,7 @@ public class PlayerControlTest {
         Potion.setQuantity(5);
         Potion.setIncreaseHealth(5);
         Player.setMaxHealth(30);
-        Player.setHealth(20); // this will have to be less as the max health or the same unless you are checking for errors
+        Player.setHealth(20);
         int potionsToUse = 1;
         int expResult = 25;
         int result = instance.increaseHealth(Potion, potionsToUse, Player);
