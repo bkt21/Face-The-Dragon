@@ -25,5 +25,8 @@ public class GameControl {
         FaceTheDragon.setPlayer(player);
         return player;
     }
+
+    public static void createNewGame(Player player) {
+System.out.println("\n****createNewGame was called ***");    }
     
 }
