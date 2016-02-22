@@ -38,6 +38,37 @@ public class PlayerControlTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        
+        System.out.println("Test 2 IncreseHealth");
+        Potion.setQuantity(0);
+        Potion.setIncreaseHealth(5);
+        Player.setMaxHealth(30);
+        Player.setHealth(20);
+        potionsToUse = 1;
+        expResult = -1;
+        result = instance.increaseHealth(Potion, potionsToUse, Player);
+        assertEquals(expResult, result);
+        
+        System.out.println("Test 3 IncreseHealth");
+        Potion.setQuantity(1);
+        Potion.setIncreaseHealth(5);
+        Player.setMaxHealth(30);
+        Player.setHealth(20);
+        potionsToUse = 2;
+        expResult = -2;
+        result = instance.increaseHealth(Potion, potionsToUse, Player);
+        assertEquals(expResult, result);
+        
+        System.out.println("Test 4 IncreseHealth");
+        Potion.setQuantity(1);
+        Potion.setIncreaseHealth(5);
+        Player.setMaxHealth(30);
+        Player.setHealth(0);
+        potionsToUse = 1;
+        expResult = -3;
+        result = instance.increaseHealth(Potion, potionsToUse, Player);
+        assertEquals(expResult, result);
+        
+        
     }
     
 }
