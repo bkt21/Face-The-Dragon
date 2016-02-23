@@ -5,32 +5,28 @@
  */
 package byui.cit260.FaceTheDragon.view;
 
-import byui.cit260.FaceTheDragon.control.GameControl;
-import facethedragon.FaceTheDragon;
 import java.util.Scanner;
 
 /**
  *
  * @author Murray
  */
-public class MainMenuView {
-
+public class HelpMenuView {
+    
     private String menu;
 
-    public MainMenuView() {
+    public HelpMenuView() {
         this.menu = "\n----------------------------------"
-                  + "\n| Main Menu                      |"
+                  + "\n| Help Menu                      |"
                   + "\n----------------------------------"
-                  + "\nN - New Game"
-                  + "\nL - Load Game"
-                  + "\nH - Help on how to play the game"
-                  + "\nS - Save Game"
+                  + "\nG - Goal of the Game"
+                  + "\nM - How to Move"
                   + "\nQ - Quit"
                   + "\n----------------------------------";
     }
 
     
-    void displayMainMenuView() {
+    void displayHelpMenuView() {
         boolean done = false;
         do {
             String menuOption = this.getMenuOption();
@@ -66,17 +62,11 @@ public class MainMenuView {
         choice = choice.toUpperCase();
         
         switch (choice){
-            case "N":
-                this.startNewGame();
+            case "G":
+                this.goalOfGame();
                 break;
-            case "L":
-                this.loadGame();
-                break;
-            case "H":
-                this.displayHelpMenu();
-                break;
-            case "S":
-                this.saveGame();
+            case "M":
+                this.howToMove();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection**** Try Again");
@@ -85,24 +75,10 @@ public class MainMenuView {
         return false;
     }
 
-    private void startNewGame() {
-        GameControl.createNewGame(FaceTheDragon.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+    private void goalOfGame() {
+        System.out.println("\n The Goal of this game is blah blah blah blah...");
     }
 
-    private void loadGame() {
-        System.out.println("\nloadGame was called");
-    }
-
-    private void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
-    }
-
-    private void saveGame() {
-        System.out.println("\nsaveGame was called");
-    }
-    
+    private void howToMove() {
+        System.out.println("\n To move you need to do it...stop being lame...");    }
 }
