@@ -19,10 +19,8 @@ public class HelpMenuView {
         this.menu = "\n----------------------------------"
                   + "\n| Help Menu                      |"
                   + "\n----------------------------------"
-                  + "\nN - New Game"
-                  + "\nL - Load Game"
-                  + "\nH - Help on how to play the game"
-                  + "\nS - Save Game"
+                  + "\nG - Goal of the Game"
+                  + "\nM - How to Move"
                   + "\nQ - Quit"
                   + "\n----------------------------------";
     }
@@ -64,17 +62,11 @@ public class HelpMenuView {
         choice = choice.toUpperCase();
         
         switch (choice){
-            case "N":
-                this.startNewGame();
+            case "G":
+                this.goalOfGame();
                 break;
-            case "L":
-                this.loadGame();
-                break;
-            case "H":
-                this.displayHelpMenu();
-                break;
-            case "S":
-                this.saveGame();
+            case "M":
+                this.howToMove();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection**** Try Again");
@@ -82,4 +74,11 @@ public class HelpMenuView {
         }
         return false;
     }
+
+    private void goalOfGame() {
+        System.out.println("\n The Goal of this game is blah blah blah blah...");
+    }
+
+    private void howToMove() {
+        System.out.println("\n To move you need to do it...stop being lame...");    }
 }
