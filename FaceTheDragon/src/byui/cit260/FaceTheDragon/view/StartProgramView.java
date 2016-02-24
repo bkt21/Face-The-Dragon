@@ -81,7 +81,19 @@ public class StartProgramView {
 
     private void displayBanner() {
         System.out.println(
-        "Welcome to Face The Dragon!"
+"                      ,-,-      \n" +
+"                     / / |      \n" +
+"   ,-'             _/ / /       \n" +
+"  (-_          _,-' `Z_/        \n" +
+"   \"#:      ,-'_,-.    \\  _     \n" +
+"    #'    _(_-'_()\\     \\\" |    \n" +
+"  ,--_,--'                 |    \n" +
+" / \"\"                      L-'\\ \n" +
+" \\,--^---v--v-._        /   \\ | \n" +
+"   \\_________________,-'      | \n" +
+"                    \\           \n" +
+"      Welcome        \\          \n" +
+" to Face The Dragon!  \\         \n"
         );
     }
 
