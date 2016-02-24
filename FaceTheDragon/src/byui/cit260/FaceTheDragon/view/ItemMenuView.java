@@ -40,7 +40,7 @@ public class ItemMenuView {
         } while (!done);
     }
         
-           private String getMenuOption() {
+        private String getMenuOption() {
         Scanner keyboard = new Scanner(System.in); 
         String value = "";
         boolean valid = false;
