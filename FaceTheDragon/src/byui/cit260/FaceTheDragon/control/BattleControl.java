@@ -29,8 +29,12 @@ public class BattleControl {
         return -3;
         }
 
-
-        damageDealt = Attacker.getAttack() - Defender.getDefense();
+        double max = (Attacker.getAttack() + (Attacker.getAttack()*.2));
+        double min = (Attacker.getAttack() - (Attacker.getAttack()*.2));
+        double firstAttackerInitialDamage = Math.floor(Math.random() * (max - min)) + min;
+        int attackerInitialDamage = (int) (firstAttackerInitialDamage);
+                
+        damageDealt = attackerInitialDamage - Defender.getDefense();
         if(damageDealt < 0){
             damageDealt = 0;
         }

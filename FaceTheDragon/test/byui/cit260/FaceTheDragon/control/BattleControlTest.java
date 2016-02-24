@@ -98,6 +98,14 @@ public class BattleControlTest {
         expResult = 100;
         result = instance.attack(Attacker, Defender);
         assertEquals(expResult, result);
+        
+        System.out.println("Test 9 att");
+        Attacker.setAttack(20);
+        Defender.setDefense(10);
+        Defender.setHealth(20);
+        expResult = 10;
+        result = instance.attack(Attacker, Defender);
+        assertEquals(expResult, result);
     }
 
     /**
