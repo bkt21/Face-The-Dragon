@@ -99,7 +99,7 @@ public class StartProgramView {
 
     private void displayNextView(Player player) {
         System.out.println("\n================================================"
-                         + "\nWelcome to Face The Dragon " + player.getName()
+                         + "\nWelcome to Face The Dragon " + player.getName() + "!"
                          + "\nGood Luck and have fun!"
                          + "\n================================================");
         

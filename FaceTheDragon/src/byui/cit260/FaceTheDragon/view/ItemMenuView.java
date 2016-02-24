@@ -79,7 +79,15 @@ public class ItemMenuView {
     }
 
     private void viewItems() {
-        System.out.println("\nviewItems was called");
+        this.menu = "\\n----------------------------------\"\n" 
+                  + "\\n| Item Stock                      |\"\n" 
+                  + "\\n----------------------------------\"\n" 
+                  + "\\nSmall Potions - \"\n" 
+                  + "\\nLarge Potions - \"\n" 
+                  + "\\nSheild - \"\n" 
+                  + "\\nArmor - \"\n" 
+                  + "\\nSwords- \"\n" 
+                  + "\\n----------------------------------\"\n";
     }
 
     private void useItems() {
