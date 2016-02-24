@@ -5,6 +5,7 @@
  */
 package byui.cit260.FaceTheDragon.view;
 
+import byui.cit260.FaceTheDragon.model.Character;
 import java.util.Scanner;
 
 /**
@@ -25,12 +26,24 @@ public class AttackMenuView {
     }
 
     
-    void displayAttackMenuView() {
+    void displayAttackMenuView(Character Attacker, Character Defender) {
         boolean done = false;
         do {
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
+            if (menuOption.toUpperCase().equals("R")){
+                if(Attacker.getLevel() > Defender.getLevel()){
+                    double rand = Math.random();
+                    if(rand > .25){
+                        return;
+                    }
+                }
+                else{
+                        double random = Math.random();
+                        if(random > .75){
+                            return;
+                        }
+                    }
+                }
             
             done = this.doAction(menuOption);
         } while (!done);
