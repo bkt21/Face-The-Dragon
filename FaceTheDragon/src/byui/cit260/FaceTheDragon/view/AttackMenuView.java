@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class AttackMenuView {
     private String menu;
-
+    
     public AttackMenuView() {
         this.menu = "\n----------------------------------"
                   + "\n| Attack Menu                     |"
