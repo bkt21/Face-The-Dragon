@@ -5,6 +5,7 @@
  */
 package byui.cit260.FaceTheDragon.view;
 
+import byui.cit260.FaceTheDragon.control.BattleControl;
 import byui.cit260.FaceTheDragon.model.Character;
 import java.util.Scanner;
 
@@ -29,6 +30,8 @@ public class AttackMenuView {
     void displayAttackMenuView(Character Attacker, Character Defender) {
         boolean done = false;
         do {
+            System.out.println("Your Health is: " + Attacker.getHealth());
+            System.out.println("Your Enemy's Health is: " + Defender.getHealth());
             String menuOption = this.getMenuOption();
             
             done = this.doAction(menuOption,Attacker,Defender);
@@ -76,7 +79,11 @@ public class AttackMenuView {
     }
 
     private void attack(Character Attacker, Character Defender) {
-        System.out.println("\n attack() was called*** ");
+        BattleControl fight = new BattleControl();
+        while(Attacker.getHealth() > 0 || Defender.getHealth() > 0){
+            
+            fight.attack(Attacker, Defender);
+        }
     }
 
     private void usePotion(Character Attacker) {
@@ -88,15 +95,23 @@ public class AttackMenuView {
                     double rand = Math.random();
                     if(rand > .25){
                         System.out.println(rand);
+                        System.out.println("You ran away!");
                         return;
                     }
+                    else{
+                        System.out.println("You failed to run away!");
+                    }
                 }
-                else{
-                        double random = Math.random();
-                        if(random > .75){
-                            System.out.println(random);
-                            return;
-                        }
+        else{
+                    double random = Math.random();
+                    if(random > .75){
+                        System.out.println(random);
+                        System.out.println("You ran away!");
+                        return;
+                    }
+                    else{
+                        System.out.println("You failed to run away!");
+                    }
                     }
                 }
  }
