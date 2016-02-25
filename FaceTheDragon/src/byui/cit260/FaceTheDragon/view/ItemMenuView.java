@@ -6,6 +6,9 @@
 package byui.cit260.FaceTheDragon.view;
 
 import java.util.Scanner;
+import byui.cit260.FaceTheDragon.model.Armor;
+import byui.cit260.FaceTheDragon.model.Weapons;
+import byui.cit260.FaceTheDragon.model.Resources;
 
 /**
  *
@@ -37,7 +40,7 @@ public class ItemMenuView {
         } while (!done);
     }
         
-           private String getMenuOption() {
+        private String getMenuOption() {
         Scanner keyboard = new Scanner(System.in); 
         String value = "";
         boolean valid = false;
@@ -79,14 +82,28 @@ public class ItemMenuView {
     }
 
     private void viewItems() {
+        
+        Armor basicArmor = new Armor();
+        Armor intermediateArmor = new Armor();
+        Armor advancedArmor = new Armor();
+        Weapons basicSword = new Weapons();
+        Weapons goldenSword = new Weapons();
+        Resources redPotion = new Resources();
+        Resources bluePotion = new Resources();
+        
         this.menu = "\\n----------------------------------\"\n" 
                   + "\\n| Item Stock                      |\"\n" 
                   + "\\n----------------------------------\"\n" 
-                  + "\\nSmall Potions - \"\n" 
-                  + "\\nLarge Potions - \"\n" 
-                  + "\\nSheild - \"\n" 
-                  + "\\nArmor - \"\n" 
-                  + "\\nSwords- \"\n" 
+                  + "\\n--- Armor ---\"\n" 
+                  + "\\nBasic Armor - " + basicArmor.getQuantity() + "/n"
+                  + "\\nIntermediate Armor - " + intermediateArmor.getQuantity() + "\n" 
+                  + "\\nAdvanced Armor - " + advancedArmor.getQuantity() +"\n" 
+                  + "\\n--- Weapons ---\"\n"
+                  + "\\nBasic Sword - " + basicSword.getQuantity() + "\n" 
+                  + "\\nGolden Sword - " + goldenSword.getQuantity() +"\n" 
+                  + "\\n--- Potions ---\"\n"
+                  + "\\nRed Potion - " + redPotion.getQuantity() + "\n" 
+                  + "\\nBlue Potion - " + bluePotion.getQuantity() +"\n" 
                   + "\\n----------------------------------\"\n";
     }
 
