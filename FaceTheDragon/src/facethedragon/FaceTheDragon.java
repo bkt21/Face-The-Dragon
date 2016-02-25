@@ -16,13 +16,14 @@ import byui.cit260.FaceTheDragon.model.Location;
 import byui.cit260.FaceTheDragon.model.Armor;
 import byui.cit260.FaceTheDragon.model.Resources;
 import byui.cit260.FaceTheDragon.model.Misc;
+import byui.cit260.FaceTheDragon.view.AttackMenuView;
 import byui.cit260.FaceTheDragon.view.StartProgramView;
 /**
  *
  * @author Murray
  */
 public class FaceTheDragon {
-
+    
     private static Game currentGame = null;
     private static Player player = null;
     

@@ -5,6 +5,7 @@
  */
 package byui.cit260.FaceTheDragon.view;
 
+import byui.cit260.FaceTheDragon.control.BattleControl;
 import byui.cit260.FaceTheDragon.model.Character;
 import java.util.Scanner;
 
@@ -14,7 +15,7 @@ import java.util.Scanner;
  */
 public class AttackMenuView {
     private String menu;
-
+    
     public AttackMenuView() {
         this.menu = "\n----------------------------------"
                   + "\n| Attack Menu                     |"
@@ -29,23 +30,11 @@ public class AttackMenuView {
     void displayAttackMenuView(Character Attacker, Character Defender) {
         boolean done = false;
         do {
+            System.out.println("Your Health is: " + Attacker.getHealth());
+            System.out.println("Your Enemy's Health is: " + Defender.getHealth());
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("R")){
-                if(Attacker.getLevel() > Defender.getLevel()){
-                    double rand = Math.random();
-                    if(rand > .25){
-                        return;
-                    }
-                }
-                else{
-                        double random = Math.random();
-                        if(random > .75){
-                            return;
-                        }
-                    }
-                }
             
-            done = this.doAction(menuOption);
+            done = this.doAction(menuOption,Attacker,Defender);
         } while (!done);
     }
 
@@ -69,19 +58,19 @@ public class AttackMenuView {
         return value;
     }
 
-    private boolean doAction(String choice) {
+    private boolean doAction(String choice, Character Attacker, Character Defender) {
         
         choice = choice.toUpperCase();
         
         switch (choice){
             case "A":
-                this.attack();
+                this.attack(Attacker,Defender);
                 break;
             case "U":
-                this.usePotion();
+                this.usePotion(Attacker);
                 break;
             case "R":
-                 this.tryToRun();
+                 this.tryToRun(Attacker,Defender);
             default:
                 System.out.println("\n*** Invalid Selection**** Try Again");
                 break;
@@ -89,15 +78,40 @@ public class AttackMenuView {
         return false;
     }
 
-    private void attack() {
-        System.out.println("\n attack() was called*** ");
+    private void attack(Character Attacker, Character Defender) {
+        BattleControl fight = new BattleControl();
+        while(Attacker.getHealth() > 0 || Defender.getHealth() > 0){
+            
+            fight.attack(Attacker, Defender);
+        }
     }
 
-    private void usePotion() {
+    private void usePotion(Character Attacker) {
         System.out.println("\n usePotion() was called*** ");
     }
 
-    private void tryToRun() {
-        System.out.println("\n tryToRun() was called*** ");
-    }
-}
+    private void tryToRun(Character Attacker, Character Defender) {
+        if(Attacker.getLevel() > Defender.getLevel()){
+                    double rand = Math.random();
+                    if(rand > .25){
+                        System.out.println(rand);
+                        System.out.println("You ran away!");
+                        return;
+                    }
+                    else{
+                        System.out.println("You failed to run away!");
+                    }
+                }
+        else{
+                    double random = Math.random();
+                    if(random > .75){
+                        System.out.println(random);
+                        System.out.println("You ran away!");
+                        return;
+                    }
+                    else{
+                        System.out.println("You failed to run away!");
+                    }
+                    }
+                }
+ }
