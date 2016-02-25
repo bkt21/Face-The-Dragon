@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class UseItemView {
     
     private String menu;
+    private String promptMessage;
     
     public UseItemView(Player player) {
         
@@ -29,6 +30,8 @@ public class UseItemView {
                   + "\nBlue Potion - " + bluePotion.getQuantity() +"\n" 
                   + "\nQ - Quit"
                   + "\n----------------------------------";
+        this.promptMessage = "\nDo you want to use a potion?";
+        ;
 
     }
     
