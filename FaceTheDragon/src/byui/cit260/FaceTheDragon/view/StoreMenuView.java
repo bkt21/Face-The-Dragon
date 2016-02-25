@@ -5,28 +5,24 @@
  */
 package byui.cit260.FaceTheDragon.view;
 
-import byui.cit260.FaceTheDragon.control.GameControl;
-import byui.cit260.FaceTheDragon.model.Character;
-import facethedragon.FaceTheDragon;
 import java.util.Scanner;
 
 /**
  *
  * @author Murray
  */
-public class MainMenuView {
-
+public class StoreMenuView {
+    
     private String menu;
 
-    public MainMenuView() {
+    public StoreMenuView() {
         this.menu = "\n----------------------------------"
-                  + "\n| Main Menu                      |"
+                  + "\n| Brittany's Shop                |"
                   + "\n----------------------------------"
-                  + "\nN - New Game"
-                  + "\nL - Load Game"
-                  + "\nH - Help on how to play the game"
-                  + "\nS - Save Game"
-                  + "\nQ - Quit"
+                  + "\nW - Buy Weapons"
+                  + "\nA - Buy Aromor"
+                  + "\nP - Buy Potions"
+                  + "\nE - Exit Shop"
                   + "\n----------------------------------";
     }
 
@@ -35,7 +31,7 @@ public class MainMenuView {
         boolean done = false;
         do {
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
+            if (menuOption.toUpperCase().equals("E"))
                 return;
             
             done = this.doAction(menuOption);
@@ -67,17 +63,14 @@ public class MainMenuView {
         choice = choice.toUpperCase();
         
         switch (choice){
-            case "N":
-                this.startNewGame();
+            case "W":
+                this.shopWeapons();
                 break;
-            case "L":
-                this.loadGame();
+            case "A":
+                this.shopArmor();
                 break;
-            case "H":
-                this.displayHelpMenu();
-                break;
-            case "S":
-                this.saveGame();
+            case "P":
+                this.shopPotions();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection**** Try Again");
@@ -86,31 +79,15 @@ public class MainMenuView {
         return false;
     }
 
-    private void startNewGame() {
-        GameControl.createNewGame(FaceTheDragon.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-        
-        Character Attacker = new Character();
-        Character Defender = new Character();
-        Attacker.setLevel(5);
-        Defender.setLevel(4);
-        AttackMenuView menu = new AttackMenuView();
-        menu.displayAttackMenuView(Attacker, Defender);
+    private void shopWeapons() {
+        System.out.println("\n shopWeapons() was called ****");
     }
 
-    private void loadGame() {
-        System.out.println("\nloadGame was called");
+    private void shopArmor() {
+        System.out.println("\n shopArmor() was called ****");    
     }
 
-    private void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+    private void shopPotions() {
+        System.out.println("\n shopPotions() was called ****");
     }
-
-    private void saveGame() {
-        System.out.println("\nsaveGame was called");
-    }
-    
 }

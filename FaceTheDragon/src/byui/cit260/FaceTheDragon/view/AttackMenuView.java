@@ -30,22 +30,8 @@ public class AttackMenuView {
         boolean done = false;
         do {
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("R")){
-                if(Attacker.getLevel() > Defender.getLevel()){
-                    double rand = Math.random();
-                    if(rand > .25){
-                        return;
-                    }
-                }
-                else{
-                        double random = Math.random();
-                        if(random > .75){
-                            return;
-                        }
-                    }
-                }
             
-            done = this.doAction(menuOption);
+            done = this.doAction(menuOption,Attacker,Defender);
         } while (!done);
     }
 
@@ -69,19 +55,19 @@ public class AttackMenuView {
         return value;
     }
 
-    private boolean doAction(String choice) {
+    private boolean doAction(String choice, Character Attacker, Character Defender) {
         
         choice = choice.toUpperCase();
         
         switch (choice){
             case "A":
-                this.attack();
+                this.attack(Attacker,Defender);
                 break;
             case "U":
-                this.usePotion();
+                this.usePotion(Attacker);
                 break;
             case "R":
-                 this.tryToRun();
+                 this.tryToRun(Attacker,Defender);
             default:
                 System.out.println("\n*** Invalid Selection**** Try Again");
                 break;
@@ -89,15 +75,28 @@ public class AttackMenuView {
         return false;
     }
 
-    private void attack() {
+    private void attack(Character Attacker, Character Defender) {
         System.out.println("\n attack() was called*** ");
     }
 
-    private void usePotion() {
+    private void usePotion(Character Attacker) {
         System.out.println("\n usePotion() was called*** ");
     }
 
-    private void tryToRun() {
-        System.out.println("\n tryToRun() was called*** ");
-    }
-}
+    private void tryToRun(Character Attacker, Character Defender) {
+        if(Attacker.getLevel() > Defender.getLevel()){
+                    double rand = Math.random();
+                    if(rand > .25){
+                        System.out.println(rand);
+                        return;
+                    }
+                }
+                else{
+                        double random = Math.random();
+                        if(random > .75){
+                            System.out.println(random);
+                            return;
+                        }
+                    }
+                }
+ }
