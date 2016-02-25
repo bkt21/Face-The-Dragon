@@ -7,6 +7,7 @@ package byui.cit260.FaceTheDragon.view;
 
 import byui.cit260.FaceTheDragon.model.Resources;
 import byui.cit260.FaceTheDragon.model.Player;
+import byui.cit260.FaceTheDragon.control.PlayerControl;
 import java.util.Scanner;
 /**
  *
@@ -71,6 +72,13 @@ public class UseItemView {
         
         choice = choice.toUpperCase();
         
+        if("yes".equals(choice)){
+            PlayerControl.increaseHealth(Potion, 0, Player);
+            
+        }
+        else{
+            
+        }
        return false;
     }
     

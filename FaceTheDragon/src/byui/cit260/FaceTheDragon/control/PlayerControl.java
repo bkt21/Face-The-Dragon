@@ -15,7 +15,7 @@ import byui.cit260.FaceTheDragon.model.Character;
 public class PlayerControl {
     
 
-    public int increaseHealth(Resources Potion, int potionsToUse, Character Player){
+    public static int increaseHealth(Resources Potion, int potionsToUse, Character Player){
             
             int newHealth; 
             int healthToAdd;
