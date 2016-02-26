@@ -108,13 +108,12 @@ public class ItemMenuView {
     }
 
     private void useItems() {
-        System.out.println("\nuseItems was called");
+       UseItemView itemView = new UseItemView();
+       itemView.displayItemMenuView();
     }
 
     private void equipItems() {
         System.out.println("\nequipItems was called");
     }
 
-    
-           
 }
