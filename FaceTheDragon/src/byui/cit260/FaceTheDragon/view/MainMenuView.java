@@ -95,7 +95,7 @@ public class MainMenuView {
         Character Attacker = new Character();
         Character Defender = new Character();
         Attacker.setLevel(5);
-        Defender.setLevel(4);
+        Defender.setLevel(100);
         AttackMenuView menu = new AttackMenuView();
         menu.displayAttackMenuView(Attacker, Defender);
     }
