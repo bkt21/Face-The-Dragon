@@ -6,7 +6,6 @@
 package byui.cit260.FaceTheDragon.view;
 
 import byui.cit260.FaceTheDragon.model.Resources;
-import byui.cit260.FaceTheDragon.model.Player;
 import byui.cit260.FaceTheDragon.control.PlayerControl;
 import byui.cit260.FaceTheDragon.model.Character;
 import java.util.Scanner;
@@ -103,13 +102,13 @@ public class UseItemView {
         int result = PlayerControl.increaseHealth(this.redPotion, potionNumber, player);
         // if control function fails
         if (result == -1) {
-            System.out.println("\n ");
+            System.out.println("\nYou do not have any potions to use.");
             return true;
         } else if (result == -2) {
-            System.out.println("\n ");
+            System.out.println("\nYou do not have enough potions.");
             return true;
         } else if (result == -3) {
-            System.out.println("\n ");
+            System.out.println("\nYou are not able to excced your max health. ");
             return true;
         }
 
