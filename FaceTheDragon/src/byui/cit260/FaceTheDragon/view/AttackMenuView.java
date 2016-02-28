@@ -48,7 +48,10 @@ public class AttackMenuView {
         value = keyboard.nextLine();
         value = value.trim();
         
-        if (value.length() < 1) {
+        if(value == "r" || value == "R"){
+            break;
+        }
+        else if (value.length() < 1) {
             System.out.println("\nInvalid value: value cannot be blank");
             continue;
             }
@@ -70,7 +73,8 @@ public class AttackMenuView {
                 this.usePotion(Attacker);
                 break;
             case "R":
-                 this.tryToRun(Attacker,Defender);
+                if(this.tryToRun(Attacker,Defender) == 1)
+                    break;
             default:
                 System.out.println("\n*** Invalid Selection**** Try Again");
                 break;
@@ -90,16 +94,17 @@ public class AttackMenuView {
         System.out.println("\n usePotion() was called*** ");
     }
 
-    private void tryToRun(Character Attacker, Character Defender) {
+    private int tryToRun(Character Attacker, Character Defender) {
         if(Attacker.getLevel() > Defender.getLevel()){
                     double rand = Math.random();
                     if(rand > .25){
                         System.out.println(rand);
                         System.out.println("You ran away!");
-                        return;
+                        return 1;
                     }
                     else{
                         System.out.println("You failed to run away!");
+                        return 0;
                     }
                 }
         else{
@@ -107,10 +112,11 @@ public class AttackMenuView {
                     if(random > .75){
                         System.out.println(random);
                         System.out.println("You ran away!");
-                        return;
+                        return 1;
                     }
                     else{
                         System.out.println("You failed to run away!");
+                        return 0;
                     }
                     }
                 }
