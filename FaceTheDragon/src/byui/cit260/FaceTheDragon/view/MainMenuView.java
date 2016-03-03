@@ -16,10 +16,8 @@ import java.util.Scanner;
  */
 public class MainMenuView extends View{
 
-    private String menu;
-
     public MainMenuView() {
-        this.menu = "\n----------------------------------"
+        super("\n----------------------------------"
                   + "\n| Main Menu                      |"
                   + "\n----------------------------------"
                   + "\nN - New Game"
@@ -27,46 +25,14 @@ public class MainMenuView extends View{
                   + "\nH - Help on how to play the game"
                   + "\nS - Save Game"
                   + "\nQ - Quit"
-                  + "\n----------------------------------";
+                  + "\n----------------------------------");
     }
-
-    
-    void displayMainMenuView() {
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); 
-        String value = "";
-        boolean valid = false;
+    @Override
+    public boolean doAction(String value) {
         
-        while(!valid){
-        System.out.println("\n" + this.menu);
-        value = keyboard.nextLine();
-        value = value.trim();
+        value = value.toUpperCase();
         
-        if (value.length() < 1) {
-            System.out.println("\nInvalid value: value cannot be blank");
-            continue;
-            }
-            break;
-        }
-        
-        return value;
-    }
-
-    private boolean doAction(String choice) {
-        
-        choice = choice.toUpperCase();
-        
-        switch (choice){
+        switch (value){
             case "N":
                 this.startNewGame();
                 break;
