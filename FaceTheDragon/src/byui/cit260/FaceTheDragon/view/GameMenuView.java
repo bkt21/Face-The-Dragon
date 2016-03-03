@@ -8,7 +8,7 @@ package byui.cit260.FaceTheDragon.view;
  *
  * @author Murray
  */
-class GameMenuView {
+class GameMenuView extends View{
 
     void displayMenu() {
         System.out.println("\n***displayMenu was called****");
