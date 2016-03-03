@@ -14,53 +14,22 @@ import byui.cit260.FaceTheDragon.model.Resources;
  *
  * @author Brittany
  */
-public class ItemMenuView {
+public class ItemMenuView extends View {
     
-     private String menu;
+    
 
     public ItemMenuView() {
-        this.menu = "\n----------------------------------"
+        super("\n----------------------------------"
                   + "\n| Item Menu                      |"
                   + "\n----------------------------------"
                   + "\nV - View Items"
                   + "\nU - Use Items"
                   + "\nE - Equip Items"
                   + "\nQ - Quit"
-                  + "\n----------------------------------";
+                  + "\n----------------------------------");
     }
-
-        void displayItemMenuView() {
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-        
-        private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); 
-        String value = "";
-        boolean valid = false;
-        
-        while(!valid){
-        System.out.println("\n" + this.menu);
-        value = keyboard.nextLine();
-        value = value.trim();
-        
-        if (value.length() < 1) {
-            System.out.println("\nInvalid value: value cannot be blank");
-            continue;
-            }
-            break;
-        }
-        
-        return value;
-    }
-           
-        private boolean doAction(String choice) {
+        @Override
+        public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();
         
