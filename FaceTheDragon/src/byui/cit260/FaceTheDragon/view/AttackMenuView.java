@@ -13,17 +13,16 @@ import java.util.Scanner;
  *
  * @author Murray
  */
-public class AttackMenuView {
-    private String menu;
+public class AttackMenuView extends View{
     
     public AttackMenuView() {
-        this.menu = "\n----------------------------------"
+        super("\n----------------------------------"
                   + "\n| Attack Menu                     |"
                   + "\n----------------------------------"
                   + "\nA - Attack"
                   + "\nU - Use Potion"
                   + "\nR - Try to Run Away"
-                  + "\n----------------------------------";
+                  + "\n----------------------------------");
     }
 
     
@@ -60,7 +59,8 @@ public class AttackMenuView {
         
         return value;
     }
-
+    
+    @Override
     private boolean doAction(String choice, Character Attacker, Character Defender) {
         
         choice = choice.toUpperCase();
