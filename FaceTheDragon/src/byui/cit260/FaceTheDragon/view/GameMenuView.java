@@ -4,14 +4,21 @@
  * and open the template in the editor.
  */
 package byui.cit260.FaceTheDragon.view;
+
 /**
  *
  * @author Murray
  */
-class GameMenuView extends View{
+class GameMenuView extends View {
 
     void displayMenu() {
         System.out.println("\n***displayMenu was called****");
     }
-    
+
+    @Override
+    public boolean doAction(String value) {
+        System.out.println("\n***doAction was called***");
+        return true;
+    }
+
 }
