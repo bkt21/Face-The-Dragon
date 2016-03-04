@@ -22,3 +22,4 @@ class GameMenuView extends View {
     }
 
 }
+
