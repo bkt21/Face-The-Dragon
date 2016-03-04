@@ -29,6 +29,13 @@ public class AttackMenuView extends View {
     }
 
     void displayAttackMenuView(Character attacker, Character defender) {
+        attacker.setAttack(5);
+        attacker.setDefense(10);
+        attacker.setHealth(100);
+        defender.setAttack(10);
+        defender.setHealth(150);
+        defender.setDefense(15);
+        
         boolean done = false;
         do {
             System.out.println("Your Health is: " + attacker.getHealth());
@@ -70,12 +77,6 @@ public class AttackMenuView extends View {
     @Override
     public boolean doAction(String choice) {
 
-        attacker.setAttack(5);
-        attacker.setDefense(10);
-        attacker.setHealth(100);
-        defender.setAttack(10);
-        defender.setHealth(150);
-        defender.setDefense(15);
         choice = choice.toUpperCase();
 
         switch (choice) {
