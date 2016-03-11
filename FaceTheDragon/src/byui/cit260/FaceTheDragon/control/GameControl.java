@@ -5,6 +5,8 @@
  */
 package byui.cit260.FaceTheDragon.control;
 
+import byui.cit260.FaceTheDragon.model.Game;
+import byui.cit260.FaceTheDragon.model.Map;
 import byui.cit260.FaceTheDragon.model.Player;
 import facethedragon.FaceTheDragon;
 
@@ -13,6 +15,10 @@ import facethedragon.FaceTheDragon;
  * @author Murray
  */
 public class GameControl {
+    
+    private Player player;
+    private InventoryItem[] inventory;
+    private Map map;
 
     public static Player createPlayer(String name) {
         if (name == null){
@@ -27,6 +33,18 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-System.out.println("\n****createNewGame was called ***");    }
+        Game game = new Game();
+        FaceTheDragon.setCurrentGame(game);
+                
+        game.setPlayer(player); //save player in game
+        
+        InventoryItem[] inventoryList = GameControl.createInventoryList();
+        game.setInventory(inventoryList);
+        
+        Map map = MapControl.createMap();
+        game.setMap(map);
+        
+        MapControl.moveCharacterToStartingLocation(map);
+    }
     
 }

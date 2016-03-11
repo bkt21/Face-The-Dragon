@@ -14,6 +14,8 @@ import java.util.Objects;
  */
 public class Game implements Serializable{
 
+    private InventoryItem[] inventory;
+    
     // class instance variables
     private Double time;
     
@@ -28,6 +30,10 @@ public class Game implements Serializable{
 
     public void setTime(Double time) {
         this.time = time;
+    }
+    
+    public InventoryItem[] getInventory(){
+        return inventory;
     }
     
     //hashCode and equals 

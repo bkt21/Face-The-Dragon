@@ -58,12 +58,12 @@ public class MainMenuView extends View{
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayMenu();
         
-        Character Attacker = new Character();
-        Character Defender = new Character();
-        Attacker.setLevel(5);
-        Defender.setLevel(100);
-        AttackMenuView menu = new AttackMenuView();
-        menu.displayAttackMenuView(Attacker, Defender);
+        //Character Attacker = new Character();
+        //Character Defender = new Character();
+        //Attacker.setLevel(5);
+        //Defender.setLevel(100);
+        //AttackMenuView menu = new AttackMenuView();
+        //menu.displayAttackMenuView(Attacker, Defender);
     }
 
     private void loadGame() {
