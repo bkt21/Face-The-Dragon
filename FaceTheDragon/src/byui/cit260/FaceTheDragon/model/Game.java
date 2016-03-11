@@ -15,8 +15,13 @@ import java.util.Objects;
 public class Game implements Serializable{
 
     private InventoryItem[] inventory;
-    Player player = new Player();
+    private Player player;
+    private Map map;
 
+    public Map getMap() {
+        return map;
+    }
+    
     public Player getPlayer() {
         return player;
     }
@@ -44,6 +49,12 @@ public class Game implements Serializable{
     public InventoryItem[] getInventory(){
         return inventory;
     }
+
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
+    }
+    
+    
     
     //hashCode and equals 
     @Override
