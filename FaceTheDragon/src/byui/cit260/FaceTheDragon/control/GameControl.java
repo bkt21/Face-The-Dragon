@@ -46,5 +46,9 @@ public class GameControl {
         
         MapControl.moveCharacterToStartingLocation(map);
     }
-    
+
+    public static InventoryItem[] createInventoryList(){
+        System.out.println("***called createInventoryList() in GameControl***");
+        return null;
+    }
 }

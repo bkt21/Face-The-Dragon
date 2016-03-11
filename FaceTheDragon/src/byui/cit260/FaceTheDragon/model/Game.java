@@ -15,6 +15,15 @@ import java.util.Objects;
 public class Game implements Serializable{
 
     private InventoryItem[] inventory;
+    Player player = new Player();
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
     
     // class instance variables
     private Double time;
@@ -65,6 +74,10 @@ public class Game implements Serializable{
     @Override
     public String toString() {
         return "Game{" + "time=" + time + '}';
+    }
+
+    public void setMap(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
