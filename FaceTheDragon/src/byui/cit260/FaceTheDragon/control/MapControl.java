@@ -14,7 +14,13 @@ import byui.cit260.FaceTheDragon.model.Map;
 class MapControl {
 
     static Map createMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Map map = new Map(5, 5);
+        
+        Scene[] scenes = createScene();
+        
+        assignScenesToLocations(map, scenes);
+        
+        return map;
     }
 
     static void moveCharacterToStartingLocation(Map map) {
