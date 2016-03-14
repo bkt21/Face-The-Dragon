@@ -8,6 +8,7 @@ package byui.cit260.FaceTheDragon.control;
 import byui.cit260.FaceTheDragon.model.Game;
 import byui.cit260.FaceTheDragon.model.Map;
 import byui.cit260.FaceTheDragon.model.Player;
+import byui.cit260.FaceTheDragon.model.InventoryItem;
 import facethedragon.FaceTheDragon;
 
 /**
@@ -48,7 +49,35 @@ public class GameControl {
     }
 
     public static InventoryItem[] createInventoryList(){
-        System.out.println("***called createInventoryList() in GameControl***");
-        return null;
+        InventoryItem[] inventory = new InventoryItem[5];
+        
+        InventoryItem redPotion = new InventoryItem();
+        redPotion.setDescription("A magical Potion that can heal you");
+        redPotion.setQuantityInStock(0);
+        inventory[0] = redPotion;
+        
+        InventoryItem bluePotion = new InventoryItem();
+        redPotion.setDescription("A magical Potion that can greatly heal you");
+        redPotion.setQuantityInStock(0);
+        inventory[0] = bluePotion;
+        
+        InventoryItem keys = new InventoryItem();
+        redPotion.setDescription("A way to open up locked doors");
+        redPotion.setQuantityInStock(0);
+        inventory[0] = keys;
+        
+        InventoryItem greenPotion = new InventoryItem();
+        redPotion.setDescription("A magical Potion that can increase your max health");
+        redPotion.setQuantityInStock(0);
+        inventory[0] = greenPotion;
+        
+        InventoryItem redPotion = new InventoryItem();
+        redPotion.setDescription("A magical Potion that can heal you");
+        redPotion.setQuantityInStock(0);
+        inventory[0] = redPotion;
+        
+        
+        
+        return inventory;
     }
 }

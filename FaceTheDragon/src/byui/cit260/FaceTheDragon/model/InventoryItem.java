@@ -9,6 +9,28 @@ package byui.cit260.FaceTheDragon.model;
  *
  * @author Murray
  */
-class InventoryItem {
+public class InventoryItem {
+    String description;
+    int quantityInStock;
+
+    public InventoryItem() {
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getQuantityInStock() {
+        return quantityInStock;
+    }
+
+    public void setQuantityInStock(int quantityInStock) {
+        this.quantityInStock = quantityInStock;
+    }
+    
     
 }
