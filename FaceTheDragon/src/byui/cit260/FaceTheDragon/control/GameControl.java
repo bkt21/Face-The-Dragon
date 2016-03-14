@@ -57,24 +57,24 @@ public class GameControl {
         inventory[0] = redPotion;
         
         InventoryItem bluePotion = new InventoryItem();
-        redPotion.setDescription("A magical Potion that can greatly heal you");
-        redPotion.setQuantityInStock(0);
+        bluePotion.setDescription("A magical Potion that can greatly heal you");
+        bluePotion.setQuantityInStock(0);
         inventory[0] = bluePotion;
         
         InventoryItem keys = new InventoryItem();
-        redPotion.setDescription("A way to open up locked doors");
-        redPotion.setQuantityInStock(0);
+        keys.setDescription("A way to open up locked doors");
+        keys.setQuantityInStock(0);
         inventory[0] = keys;
         
         InventoryItem greenPotion = new InventoryItem();
-        redPotion.setDescription("A magical Potion that can increase your max health");
-        redPotion.setQuantityInStock(0);
+        greenPotion.setDescription("A magical Potion that can increase your max health");
+        greenPotion.setQuantityInStock(0);
         inventory[0] = greenPotion;
         
-        InventoryItem redPotion = new InventoryItem();
-        redPotion.setDescription("A magical Potion that can heal you");
-        redPotion.setQuantityInStock(0);
-        inventory[0] = redPotion;
+        InventoryItem bloodPotion = new InventoryItem();
+        bloodPotion.setDescription("A magical Potion that can increase your attack");
+        bloodPotion.setQuantityInStock(0);
+        inventory[0] = bloodPotion;
         
         
         
