@@ -8,6 +8,7 @@ package byui.cit260.FaceTheDragon.control;
 import byui.cit260.FaceTheDragon.model.Game;
 import byui.cit260.FaceTheDragon.model.Map;
 import byui.cit260.FaceTheDragon.model.Player;
+import byui.cit260.FaceTheDragon.model.Character;
 import byui.cit260.FaceTheDragon.model.InventoryItem;
 import facethedragon.FaceTheDragon;
 
@@ -18,6 +19,7 @@ import facethedragon.FaceTheDragon;
 public class GameControl {
     
     private Player player;
+    private Character character;
     private InventoryItem[] inventory;
     private Map map;
 
@@ -42,6 +44,9 @@ public class GameControl {
         InventoryItem[] inventoryList = GameControl.createInventoryList();
         game.setInventory(inventoryList);
         
+        Character character = new Character();
+        game.setCharacter(character);
+        
         Map map = MapControl.createMap();
         game.setMap(map);
         
@@ -54,30 +59,44 @@ public class GameControl {
         InventoryItem redPotion = new InventoryItem();
         redPotion.setDescription("A magical Potion that can heal you");
         redPotion.setQuantityInStock(0);
-        inventory[0] = redPotion;
+        inventory[items.redPotion.ordinal()] = redPotion;
         
         InventoryItem bluePotion = new InventoryItem();
         bluePotion.setDescription("A magical Potion that can greatly heal you");
         bluePotion.setQuantityInStock(0);
-        inventory[0] = bluePotion;
+        inventory[items.bluePotion.ordinal()] = bluePotion;
         
         InventoryItem keys = new InventoryItem();
         keys.setDescription("A way to open up locked doors");
         keys.setQuantityInStock(0);
-        inventory[0] = keys;
+        inventory[items.keys.ordinal()] = keys;
         
         InventoryItem greenPotion = new InventoryItem();
         greenPotion.setDescription("A magical Potion that can increase your max health");
         greenPotion.setQuantityInStock(0);
-        inventory[0] = greenPotion;
+        inventory[items.greenPotion.ordinal()] = greenPotion;
         
         InventoryItem bloodPotion = new InventoryItem();
         bloodPotion.setDescription("A magical Potion that can increase your attack");
         bloodPotion.setQuantityInStock(0);
-        inventory[0] = bloodPotion;
+        inventory[items.bloodPotion.ordinal()] = bloodPotion;
+        
+        InventoryItem gold = new InventoryItem();
+        gold.setDescription("Gold ore to buy items with");
+        gold.setQuantityInStock(0);
+        inventory[items.gold.ordinal()] = gold;
         
         
         
         return inventory;
+    }
+    
+    public enum items {
+        redPotion,
+        bluePotion,
+        keys,
+        greenPotion,
+        bloodPotion,
+        gold;
     }
 }

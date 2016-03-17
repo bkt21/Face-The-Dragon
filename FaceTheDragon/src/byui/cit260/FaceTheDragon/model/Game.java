@@ -17,6 +17,15 @@ public class Game implements Serializable{
     private InventoryItem[] inventory;
     private Player player;
     private Map map;
+    private Character character;
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
 
     public Map getMap() {
         return map;

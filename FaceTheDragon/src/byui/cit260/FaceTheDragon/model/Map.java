@@ -15,6 +15,7 @@ public class Map implements Serializable{
     
     private int rowCount;
     private int columnCount;
+    private Location[][] = locations;
     
     //Default Constructor
     public Map() {

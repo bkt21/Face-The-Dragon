@@ -15,6 +15,8 @@ public class Location extends Map{
     private int row;
     private int column;
     private String description;
+    private Scene scene;
+    
     
     //default constructor
 

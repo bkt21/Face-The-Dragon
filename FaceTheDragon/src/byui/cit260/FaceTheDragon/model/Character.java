@@ -27,7 +27,15 @@ public class Character implements Serializable{
    
 
     public Character() {
-   
+        this.name = "";
+        this.description = "";
+        this.attack = 10;
+        this.defense = 5;
+        this.level = 1;
+        this.gold = 10;
+        this.maxHealth = 10;
+        this.health = 10;
+        this.exp = 0;
     }
     
     //getters and setters
