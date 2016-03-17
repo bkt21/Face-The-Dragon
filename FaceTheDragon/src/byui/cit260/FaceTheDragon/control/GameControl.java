@@ -10,6 +10,7 @@ import byui.cit260.FaceTheDragon.model.Map;
 import byui.cit260.FaceTheDragon.model.Player;
 import byui.cit260.FaceTheDragon.model.Character;
 import byui.cit260.FaceTheDragon.model.InventoryItem;
+import byui.cit260.FaceTheDragon.model.Scene;
 import facethedragon.FaceTheDragon;
 
 /**
@@ -17,6 +18,10 @@ import facethedragon.FaceTheDragon;
  * @author Murray
  */
 public class GameControl {
+
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     private Player player;
     private Character character;

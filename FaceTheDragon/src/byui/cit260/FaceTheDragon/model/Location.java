@@ -6,6 +6,7 @@
 package byui.cit260.FaceTheDragon.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 /**
  *
@@ -16,6 +17,7 @@ public class Location extends Map{
     private int column;
     private String description;
     private Scene scene;
+    private ArrayList<Character> characters;
     
     
     //default constructor

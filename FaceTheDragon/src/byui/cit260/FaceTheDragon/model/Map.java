@@ -5,6 +5,7 @@
  */
 package byui.cit260.FaceTheDragon.model;
 
+import byui.cit260.FaceTheDragon.control.GameControl;
 import java.io.Serializable;
 import java.util.Objects;
 /**
@@ -19,6 +20,16 @@ public class Map implements Serializable{
     
     //Default Constructor
     public Map() {
+    }
+    
+    public Map createMap() {
+        Map map = new Map();
+        
+        Scene[] scenes = createScenes();
+        
+        GameControl.assignScenesToLocations(map,scenes);
+        
+        return map;
     }
 
     public Map(int i, int i0) {
@@ -79,5 +90,9 @@ public class Map implements Serializable{
     public String toString() {
         return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
     } 
+
+    private Scene[] createScenes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
 }
