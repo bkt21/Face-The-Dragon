@@ -14,12 +14,36 @@ import java.util.Objects;
  */
 public class Map implements Serializable{
     
-    private int rowCount;
-    private int columnCount;
-    private Location[][] = locations;
+    private int noOfRows;
+    private int noOfColumns;
+    private Location[][] locations;
     
     //Default Constructor
     public Map() {
+    }
+    
+    public Map (int noOfRows, int noOfColumns){
+        if(noOfRows < 1 || noOfColumns < 1){
+            System.out.println("The number of rows and columns must be > zero");
+            return;
+        }
+        
+        this.noOfRows = noOfRows;
+        this.noOfColumns = noOfColumns;
+        
+        this.locations = new Location[noOfRows][noOfColumns];
+        
+        for(int row = 0; row < noOfRows; row++){
+            for(int column = 0; column < noOfColumns; column++){
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                
+                locations[row][column] = location;
+            }
+        }
+        
     }
     
     public Map createMap() {
@@ -31,35 +55,31 @@ public class Map implements Serializable{
         
         return map;
     }
-
-    public Map(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     //Getters and Setters
 
     public int getRowCount() {
-        return rowCount;
+        return noOfRows;
     }
 
-    public void setRowCount(int rowCount) {
-        this.rowCount = rowCount;
+    public void setRowCount(int noOfRows) {
+        this.noOfRows = noOfRows;
     }
 
     public int getColumnCount() {
-        return columnCount;
+        return noOfColumns;
     }
 
-    public void setColumnCount(int columnCount) {
-        this.columnCount = columnCount;
+    public void setColumnCount(int noOfColumns) {
+        this.noOfColumns = noOfColumns;
     }
 
     //hashCode
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 19 * hash + this.rowCount;
-        hash = 19 * hash + this.columnCount;
+        hash = 19 * hash + this.noOfRows;
+        hash = 19 * hash + this.noOfColumns;
         return hash;
     }
 
@@ -76,10 +96,10 @@ public class Map implements Serializable{
             return false;
         }
         final Map other = (Map) obj;
-        if (this.rowCount != other.rowCount) {
+        if (this.noOfRows != other.noOfRows) {
             return false;
         }
-        if (this.columnCount != other.columnCount) {
+        if (this.noOfColumns != other.noOfColumns) {
             return false;
         }
         return true;
@@ -88,7 +108,7 @@ public class Map implements Serializable{
     // toString
     @Override
     public String toString() {
-        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
+        return "Map{" + "noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + '}';
     } 
 
     private Scene[] createScenes() {

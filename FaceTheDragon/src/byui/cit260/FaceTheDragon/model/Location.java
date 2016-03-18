@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Location extends Map{
     private int row;
     private int column;
-    private String description;
+    private boolean visited;
     private Scene scene;
     private ArrayList<Character> characters;
     
@@ -43,25 +43,31 @@ public class Location extends Map{
         this.column = column;
     }
 
-    public String getDescription() {
-        return description;
+    public boolean isVisited() {
+        return visited;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setVisited(boolean visited) {
+        this.visited = visited;
     }
+
     
-    //hascode
+    
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 67 * hash + this.row;
-        hash = 67 * hash + this.column;
-        hash = 67 * hash + Objects.hashCode(this.description);
+        int hash = 7;
+        hash = 37 * hash + this.row;
+        hash = 37 * hash + this.column;
+        hash = 37 * hash + (this.visited ? 1 : 0);
         return hash;
     }
 
-    //equals
+    @Override
+    public String toString() {
+        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + '}';
+    }
+
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -80,16 +86,10 @@ public class Location extends Map{
         if (this.column != other.column) {
             return false;
         }
-        if (!Objects.equals(this.description, other.description)) {
+        if (this.visited != other.visited) {
             return false;
         }
         return true;
     }
-    
-    //tostring
-    @Override
-    public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", description=" + description + '}';
-    }
-    
+
 }

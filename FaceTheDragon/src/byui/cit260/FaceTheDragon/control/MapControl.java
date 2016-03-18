@@ -6,6 +6,7 @@
 package byui.cit260.FaceTheDragon.control;
 
 import byui.cit260.FaceTheDragon.model.Map;
+import byui.cit260.FaceTheDragon.model.Scene;
 
 /**
  *
@@ -24,6 +25,14 @@ class MapControl {
     }
 
     static void moveCharacterToStartingLocation(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static Scene[] createScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static void assignScenesToLocations(Map map, Scene[] scenes) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
