@@ -58,22 +58,31 @@ public class Map implements Serializable{
     
     //Getters and Setters
 
-    public int getRowCount() {
+    public int getNoOfRows() {
         return noOfRows;
     }
 
-    public void setRowCount(int noOfRows) {
+    public void setNoOfRows(int noOfRows) {
         this.noOfRows = noOfRows;
     }
 
-    public int getColumnCount() {
+    public int getNoOfColumns() {
         return noOfColumns;
     }
 
-    public void setColumnCount(int noOfColumns) {
+    public void setNoOfColumns(int noOfColumns) {
         this.noOfColumns = noOfColumns;
     }
 
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    
     //hashCode
     @Override
     public int hashCode() {

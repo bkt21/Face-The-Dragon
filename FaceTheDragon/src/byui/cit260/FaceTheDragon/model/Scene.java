@@ -12,6 +12,8 @@ import java.io.Serializable;
  */
 public class Scene extends Location{
     private String description;
+    private String mapSymbol;
+    private boolean blocked;
 
     public Scene() {
         super();
@@ -23,6 +25,22 @@ public class Scene extends Location{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
+
+    public boolean isBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
     }
     
     
