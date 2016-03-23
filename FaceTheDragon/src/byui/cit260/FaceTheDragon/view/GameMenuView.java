@@ -56,7 +56,7 @@ class GameMenuView extends View {
         return false;
     }
         
-    public void displayMenu() {
+  public void displayMenu() {
         System.out.println("\n***displayMenu was called****");
     }
 
@@ -79,6 +79,31 @@ class GameMenuView extends View {
             
             System.out.println(line.toString());
         }
+    }
+
+    private void displayMap() {
+        System.out.println("Yo we stil gots ta do this...");
+        /*
+BEGIN
+ get the map locations from the current game
+ DISPLAY title
+ DISPLAY row of column numbers
+ FOR every row in map
+ DISPLAY row divider
+ DISPLAY row number
+ FOR every column in row
+ DISPLAY column divider
+ location = locations[row][column]
+ IF location has been visited
+ DISPLAY the map symbol for location
+ ELSE
+ DISPLAY " ?? "
+ ENDIF
+ DISPLAY ending column divider
+ ENDFOR
+ DISPLAY ending row divider
+END
+        */
     }
 
 }
