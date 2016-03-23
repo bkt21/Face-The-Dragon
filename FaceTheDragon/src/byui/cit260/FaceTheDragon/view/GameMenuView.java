@@ -81,29 +81,19 @@ class GameMenuView extends View {
         }
     }
 
-    private void displayMap() {
-        System.out.println("Yo we stil gots ta do this...");
-        /*
-BEGIN
- get the map locations from the current game
- DISPLAY title
- DISPLAY row of column numbers
- FOR every row in map
- DISPLAY row divider
- DISPLAY row number
- FOR every column in row
- DISPLAY column divider
- location = locations[row][column]
- IF location has been visited
- DISPLAY the map symbol for location
- ELSE
- DISPLAY " ?? "
- ENDIF
- DISPLAY ending column divider
- ENDFOR
- DISPLAY ending row divider
-END
-        */
+    private long displayMap(int[][] mapLocations ) {
+        StringBuilder line;
+        
+        Game game = FaceTheDragon.getCurrentGame();
+        MapControl[] map = game.getMap();
+        
+        long total = 0;
+        for (int i = 0; i < mapLocations.length; i++) {
+            for (int j = 0; j < mapLocations[i].length; j++){
+                total += mapLocations[i][j];
+            }
+        }
+        return total;
     }
 
 }
