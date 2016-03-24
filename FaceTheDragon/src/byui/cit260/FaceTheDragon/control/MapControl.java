@@ -243,4 +243,20 @@ class MapControl {
         locations[4][4].setScene(scenes[SceneType.dragonLair.ordinal()]);
     }
     
+    private static int mapExplored(Map map){
+        int totalScenesVisited = 0;
+        int percentageVisited;
+        Location[][] locations = map.getLocations();
+        
+        for(int i = 0; i < 5; i++){
+            for(int j = 0; j < 5; j++){
+                if(locations[i][j].isVisited() != false){
+                    totalScenesVisited++;
+                }
+            }
+        }
+        percentageVisited = Math.round(totalScenesVisited / 25);
+        return percentageVisited;
+    }
+    
 }
