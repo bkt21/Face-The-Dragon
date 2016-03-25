@@ -5,6 +5,9 @@
  */
 package byui.cit260.FaceTheDragon.view;
 
+import facethedragon.FaceTheDragon;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -13,6 +16,9 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface{
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = FaceTheDragon.getInFile();
+    protected final PrintWriter console = FaceTheDragon.getOutFile();
     
     public View() {
     }
@@ -35,13 +41,12 @@ public abstract class View implements ViewInterface{
     
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in); 
         String value = null;
         boolean valid = false;
         
         while(!valid){
         System.out.println("\n" + this.displayMessage);
-        value = keyboard.nextLine();
+        value = this.keyboard.readLine();
         value = value.trim();
         
         if (value.length() < 1) {

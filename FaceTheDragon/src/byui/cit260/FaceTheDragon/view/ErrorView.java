@@ -15,12 +15,16 @@ import java.io.PrintWriter;
 public class ErrorView {
     
     private static final PrintWriter errorFile = FaceTheDragon.getOutFile();
+    private static final PrintWriter logFile = FaceTheDragon.getLogFile();
     
     public static void display(String className, String errorMessage) {
         errorFile.println(
         "------------------------------"
         + "\n- Error - " + errorMessage
         + "\n----------------------------");
+        
+        //log error
+        logFile.println(className + " - " + errorMessage);
     }
     
 }

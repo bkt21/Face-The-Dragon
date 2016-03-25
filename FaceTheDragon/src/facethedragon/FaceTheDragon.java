@@ -36,29 +36,37 @@ public class FaceTheDragon {
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
     
+    private static PrintWriter logFile = null;
+    
     public static void main(String[] args) {
         
         try{
             FaceTheDragon.inFile = new BufferedReader(new InputStreamReader(System.in));
             
             FaceTheDragon.outFile = new PrintWriter(System.out, true);
+            
+            String filePath = "log.txt";
+            FaceTheDragon.logFile = new PrintWriter(filePath);
         
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
         
-        }catch (Throwable e) {
+        }catch (Exception e) {
             System.out.println("Exception" + e.toString() +
                                 "\nCause: " + e.getCause() +
                                 "\nMessage: " + e.getMessage());
-            e.printStackTrace();
+            e.printStackTrace();;
         }
         finally{
             try {
                 if(FaceTheDragon.inFile != null)
-                    FaceTheDragon.inFile.close();
+                   FaceTheDragon.inFile.close();
                 
                 if(FaceTheDragon.outFile != null)
-                FaceTheDragon.outFile.close();
+                   FaceTheDragon.outFile.close();
+                
+                if(FaceTheDragon.logFile != null)
+                   FaceTheDragon.logFile.close();
             } catch (IOException ex) {
                 System.out.println("Error closing files");
                 return;
@@ -83,7 +91,14 @@ public class FaceTheDragon {
     public static void setInFile(BufferedReader inFile) {
         FaceTheDragon.inFile = inFile;
     }
-    
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        FaceTheDragon.logFile = logFile;
+    }
     
     public static Game getCurrentGame() {
         return currentGame;
