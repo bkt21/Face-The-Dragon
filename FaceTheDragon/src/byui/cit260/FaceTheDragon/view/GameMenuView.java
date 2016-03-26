@@ -7,6 +7,7 @@ package byui.cit260.FaceTheDragon.view;
 
 import byui.cit260.FaceTheDragon.model.Game;
 import byui.cit260.FaceTheDragon.model.InventoryItem;
+import byui.cit260.FaceTheDragon.model.Character;
 import facethedragon.FaceTheDragon;
 
 /**
@@ -22,6 +23,7 @@ class GameMenuView extends View {
                   + "\nV - View Map"
                   + "\nI - View List of Items in Inventory"
                   + "\nM - Move"
+                  + "\nC - Character Info"
                   + "\nH - Help"
                   + "\nQ - Quit"
                   + "\n----------------------------------");
@@ -42,6 +44,9 @@ class GameMenuView extends View {
                 break;
             case 'M':
                 this.move();
+                break;
+            case 'C':
+                this.characterInfo();
                 break;
             case 'H':
                 this.displayHelp();
@@ -94,6 +99,18 @@ class GameMenuView extends View {
             }
         }
         return total;
+    }
+
+    private void characterInfo(Character character) {
+        System.out.println("Your Character info is: " 
+                            + "\nName: " + character.getName()
+                            + "\nAttack: " + character.getAttack() 
+                            + "\nDefense: " + character.getDefense()
+                            + "\nLevel: " + character.getLevel()
+                            + "\nGold: " + character.getGold()
+                            + "\nHealth: " + character.getHealth() + " out of " + character.getMaxHealth()
+                            + "\nExperience: " + character.getExp()
+        );
     }
 
 }
