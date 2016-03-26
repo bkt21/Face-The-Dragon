@@ -109,8 +109,7 @@ class GameMenuView extends View {
                             + "\nLevel: " + character.getLevel()
                             + "\nGold: " + character.getGold()
                             + "\nHealth: " + character.getHealth() + " out of " + character.getMaxHealth()
-                            + "\nExperience: " + character.getExp()
-        );
+                            + "\nExperience: " + character.getExp());
     }
 
 }
