@@ -14,7 +14,7 @@ import java.util.Scanner;
  *
  * @author Brittany
  */
-public class UseItemView {
+public class UseItemView extends View{
 
     private String promptMessage;
     private Resources redPotion = new Resources();
@@ -49,13 +49,13 @@ public class UseItemView {
     }
 
     private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
 
+        try{
         while (!valid) {
             System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
+            value = this.keyboard.readLine();
             value = value.trim();
 
             if (value.length() < 1) {
@@ -64,6 +64,9 @@ public class UseItemView {
             }
             break;
         }
+     }  catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
+     }
 
         return value;
     }

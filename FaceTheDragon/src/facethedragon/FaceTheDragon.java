@@ -50,7 +50,7 @@ public class FaceTheDragon {
         
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
-        
+            return;
         }catch (Exception e) {
             System.out.println("Exception" + e.toString() +
                                 "\nCause: " + e.getCause() +
