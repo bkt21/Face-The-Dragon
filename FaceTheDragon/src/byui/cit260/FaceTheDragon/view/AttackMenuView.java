@@ -47,10 +47,10 @@ public class AttackMenuView extends View {
     }
 
     private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
 
+        try{
         while (!valid) {
             System.out.println("\n" + "\n----------------------------------"
                     + "\n| Attack Menu                     |"
@@ -59,7 +59,7 @@ public class AttackMenuView extends View {
                     + "\nU - Use Potion"
                     + "\nR - Try to Run Away"
                     + "\n----------------------------------");
-            value = keyboard.nextLine();
+            value = this.keyboard.readLine();
             value = value.trim();
 
             if (value == "r" || value == "R") {
@@ -70,7 +70,9 @@ public class AttackMenuView extends View {
             }
             break;
         }
-
+        }catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
+        }
         return value;
     }
 

@@ -72,7 +72,7 @@ public class UseItemView extends View{
     }
 
     //menu do action
-    private boolean doAction(String choice) {
+    public boolean doAction(String choice) {
 
         choice = choice.toUpperCase();
         Character player = new Character();
