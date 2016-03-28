@@ -5,6 +5,7 @@
  */
 package byui.cit260.FaceTheDragon.model;
 
+import byui.cit260.FaceTheDragon.view.View;
 import byui.cit260.FaceTheDragon.control.GameControl;
 import java.io.Serializable;
 import java.util.Objects;

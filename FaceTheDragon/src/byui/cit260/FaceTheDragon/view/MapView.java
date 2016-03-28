@@ -51,13 +51,13 @@ public class MapView extends View {
     }
 
     private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
 
+        try{
         while (!valid) {
             System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
+            value = this.keyboard.readLine();
             value = value.trim();
 
             if (value.length() < 1) {
@@ -66,7 +66,9 @@ public class MapView extends View {
             }
             break;
         }
-
+        }catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
+        }
         return value;
     }
 
