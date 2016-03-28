@@ -124,31 +124,31 @@ class MapControl {
         
         Scene pondScene = new Scene();
         pondScene.setDescription("");
-        pondScene.setMapSymbol(" PO ");
+        pondScene.setMapSymbol(" POND1 ");
         pondScene.setBlocked(false);
         scenes[SceneType.pond.ordinal()] = pondScene;
         
         Scene ogreSwampScene = new Scene();
         ogreSwampScene.setDescription("");
-        ogreSwampScene.setMapSymbol(" OS ");
+        ogreSwampScene.setMapSymbol(" SWAMP ");
         ogreSwampScene.setBlocked(false);
         scenes[SceneType.ogreSwamp.ordinal()] = ogreSwampScene;
         
         Scene forest8Scene = new Scene();
         forest8Scene.setDescription("");
-        forest8Scene.setMapSymbol(" FOR8 ");
+        forest8Scene.setMapSymbol(" FOR08 ");
         forest8Scene.setBlocked(false);
         scenes[SceneType.forest8.ordinal()] = forest8Scene;
         
         Scene lake4Scene = new Scene();
         lake4Scene.setDescription("");
-        lake4Scene.setMapSymbol(" LA4 ");
+        lake4Scene.setMapSymbol(" LAKE4 ");
         lake4Scene.setBlocked(false);
         scenes[SceneType.lake4.ordinal()] = lake4Scene;
         
         Scene forest9Scene = new Scene();
         forest9Scene.setDescription("");
-        forest9Scene.setMapSymbol(" FOR9 ");
+        forest9Scene.setMapSymbol(" FOR09 ");
         forest9Scene.setBlocked(false);
         scenes[SceneType.forest9.ordinal()] = forest9Scene;
         
@@ -166,7 +166,7 @@ class MapControl {
         
         Scene abandonedBuildingScene = new Scene();
         abandonedBuildingScene.setDescription("");
-        abandonedBuildingScene.setMapSymbol(" AB ");
+        abandonedBuildingScene.setMapSymbol(" BUILD ");
         abandonedBuildingScene.setBlocked(false);
         scenes[SceneType.abandonedBuilding.ordinal()] = abandonedBuildingScene;
         
@@ -178,7 +178,7 @@ class MapControl {
         
         Scene dragonLairScene = new Scene();
         dragonLairScene.setDescription("");
-        dragonLairScene.setMapSymbol(" DL ");
+        dragonLairScene.setMapSymbol(" DLAIR ");
         dragonLairScene.setBlocked(false);
         scenes[SceneType.dragonLair.ordinal()] = dragonLairScene;
         

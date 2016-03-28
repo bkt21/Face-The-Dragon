@@ -94,8 +94,17 @@ class GameMenuView extends View {
         
         long total = 0;
         for (int i = 0; i < mapLocations.length; i++) {
+            System.out.println("|--------");
             for (int j = 0; j < mapLocations[i].length; j++){
+                System.out.println("|");
                 total += mapLocations[i][j];
+               if (mapLocations[i][j].visited){
+                   System.out.println(mapLocations[i][j].getMapSymbol);
+               } 
+               else{
+                   System.out.println("  ??  ");
+               }
+               System.out.println("|");
             }
         }
         return total;
