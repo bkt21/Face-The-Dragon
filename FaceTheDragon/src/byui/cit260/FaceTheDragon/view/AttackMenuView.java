@@ -38,8 +38,8 @@ public class AttackMenuView extends View {
         
         boolean done = false;
         do {
-            System.out.println("Your Health is: " + attacker.getHealth());
-            System.out.println("Your Enemy's Health is: " + defender.getHealth());
+            this.console.println("Your Health is: " + attacker.getHealth());
+            this.console.println("Your Enemy's Health is: " + defender.getHealth());
             String menuOption = this.getMenuOption();
 
             done = this.doAction(menuOption);
@@ -52,7 +52,7 @@ public class AttackMenuView extends View {
 
         try{
         while (!valid) {
-            System.out.println("\n" + "\n----------------------------------"
+            this.console.println("\n" + "\n----------------------------------"
                     + "\n| Attack Menu                     |"
                     + "\n----------------------------------"
                     + "\nA - Attack"
@@ -108,28 +108,28 @@ public class AttackMenuView extends View {
     }
 
     private void usePotion(Character attacker) {
-        System.out.println("\n usePotion() was called*** ");
+        this.console.println("\n usePotion() was called*** ");
     }
 
     private int tryToRun(Character attacker, Character defender) {
         if (attacker.getLevel() > defender.getLevel()) {
             double rand = Math.random();
             if (rand > .25) {
-                System.out.println(rand);
-                System.out.println("You ran away!");
+                this.console.println(rand);
+                this.console.println("You ran away!");
                 return 1;
             } else {
-                System.out.println("You failed to run away!");
+                this.console.println("You failed to run away!");
                 return 0;
             }
         } else {
             double random = Math.random();
             if (random > .75) {
-                System.out.println(random);
-                System.out.println("You ran away!");
+                this.console.println(random);
+                this.console.println("You ran away!");
                 return 1;
             } else {
-                System.out.println("You failed to run away!");
+                this.console.println("You failed to run away!");
                 return 0;
             }
         }

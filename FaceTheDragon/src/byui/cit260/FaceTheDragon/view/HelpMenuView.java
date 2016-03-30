@@ -43,9 +43,9 @@ public class HelpMenuView extends View{
     }
 
     private void goalOfGame() {
-        System.out.println("\n The Goal of this game is blah blah blah blah...");
+        this.console.println("\n The Goal of this game is blah blah blah blah...");
     }
 
     private void howToMove() {
-        System.out.println("\n To move you need to do it...stop being lame...");    }
+        this.console.println("\n To move you need to do it...stop being lame...");    }
 }

@@ -54,7 +54,7 @@ public class UseItemView extends View{
 
         try{
         while (!valid) {
-            System.out.println("\n" + this.promptMessage);
+            this.console.println("\n" + this.promptMessage);
             value = this.keyboard.readLine();
             value = value.trim();
 
@@ -105,17 +105,17 @@ public class UseItemView extends View{
         int result = PlayerControl.increaseHealth(this.redPotion, potionNumber, player);
         // if control function fails
         if (result == -1) {
-            System.out.println("\nYou do not have any potions to use.");
+            this.console.println("\nYou do not have any potions to use.");
             return true;
         } else if (result == -2) {
-            System.out.println("\nYou do not have enough potions.");
+            this.console.println("\nYou do not have enough potions.");
             return true;
         } else if (result == -3) {
-            System.out.println("\nYou are not able to excced your max health. ");
+            this.console.println("\nYou are not able to excced your max health. ");
             return true;
         }
 
-        System.out.println("\n Your new health is: " + result);
+        this.console.println("\n Your new health is: " + result);
         return true;
     }
 

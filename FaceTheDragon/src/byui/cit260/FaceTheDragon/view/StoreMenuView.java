@@ -47,14 +47,14 @@ public class StoreMenuView extends View{
     }
 
     private void shopWeapons() {
-        System.out.println("\n shopWeapons() was called ****");
+        this.console.println("\n shopWeapons() was called ****");
     }
 
     private void shopArmor() {
-        System.out.println("\n shopArmor() was called ****");    
+        this.console.println("\n shopArmor() was called ****");    
     }
 
     private void shopPotions() {
-        System.out.println("\n shopPotions() was called ****");
+        this.console.println("\n shopPotions() was called ****");
     }
 }

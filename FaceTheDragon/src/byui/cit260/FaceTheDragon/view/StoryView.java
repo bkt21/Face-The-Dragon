@@ -39,10 +39,10 @@ public class StoryView extends View{
     }
 
     private void moreInfo() {
-        System.out.println("\n*** moreInfo called****");
+        this.console.println("\n*** moreInfo called****");
     }
 
     private void Pictures() {
-        System.out.println("\n*** Pictures called****");
+        this.console.println("\n*** Pictures called****");
     }
 }

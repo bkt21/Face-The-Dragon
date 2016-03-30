@@ -55,14 +55,14 @@ class GameMenuView extends View {
                 this.saveGame();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection**** Try Again");
+                this.console.println("\n*** Invalid Selection**** Try Again");
                 break;
         }
         return false;
     }
         
   public void displayMenu() {
-        System.out.println("\n***displayMenu was called****");
+        this.console.println("\n***displayMenu was called****");
     }
 
     private void viewInventory() {
@@ -71,18 +71,18 @@ class GameMenuView extends View {
         Game game = FaceTheDragon.getCurrentGame();
         InventoryItem[] inventory = game.getInventory();
         
-        System.out.println("\n       LIST OF INVENTORY ITEMS");
+        this.console.println("\n       LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                                      ");
         line.insert(0,"DESCRIPTION");
         line.insert(20,"QUANTITY IN STOCK");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         for(InventoryItem item : inventory) {
             line = new StringBuilder("                                      ");
             line.insert(0, item.getDescription());
             line.insert(23, item.getQuantityInStock());
             
-            System.out.println(line.toString());
+            this.console.println(line.toString());
         }
     }
 
@@ -94,24 +94,24 @@ class GameMenuView extends View {
         
         long total = 0;
         for (int i = 0; i < mapLocations.length; i++) {
-            System.out.println("|--------");
+            this.console.println("|--------");
             for (int j = 0; j < mapLocations[i].length; j++){
-                System.out.println("|");
+                this.console.println("|");
                 total += mapLocations[i][j];
                if (mapLocations[i][j].visited){
-                   System.out.println(mapLocations[i][j].getMapSymbol);
+                   this.console.println(mapLocations[i][j].getMapSymbol);
                } 
                else{
-                   System.out.println("  ??  ");
+                   this.console.println("  ??  ");
                }
-               System.out.println("|");
+               this.console.println("|");
             }
         }
         return total;
     }
 
     private void characterInfo(Character character) {
-        System.out.println("Your Character info is: " 
+        this.console.println("Your Character info is: " 
                             + "\nName: " + character.getName()
                             + "\nAttack: " + character.getAttack() 
                             + "\nDefense: " + character.getDefense()

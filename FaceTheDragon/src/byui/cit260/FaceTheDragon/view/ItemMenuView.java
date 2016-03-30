@@ -83,7 +83,7 @@ public class ItemMenuView extends View {
     }
 
     private void equipItems() {
-        System.out.println("\nequipItems was called");
+        this.console.println("\nequipItems was called");
     }
 
 }

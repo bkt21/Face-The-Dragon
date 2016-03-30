@@ -61,7 +61,7 @@ public class MainMenuView extends View{
     }
 
     private void loadGame() {
-        System.out.println("\nloadGame was called");
+        this.console.println("\nloadGame was called");
     }
 
     private void displayHelpMenu() {
@@ -70,7 +70,7 @@ public class MainMenuView extends View{
     }
 
     private void saveGame() {
-        System.out.println("\nsaveGame was called");
+        this.console.println("\nsaveGame was called");
     }
     
 }

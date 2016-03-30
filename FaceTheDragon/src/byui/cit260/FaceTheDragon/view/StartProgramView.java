@@ -18,7 +18,7 @@ public class StartProgramView extends View{
     @Override
     public boolean doAction(String playersName){
         if(playersName.length() < 2){
-            System.out.println("\nInvalid players name: "
+            this.console.println("\nInvalid players name: "
                     + "The name must be greater than one character in length");
             return false;
         }
@@ -45,7 +45,7 @@ public class StartProgramView extends View{
     }
 
     private void displayBanner() {
-        System.out.println(
+        this.console.println(
 "                      ,-,-      \n" +
 "                     / / |      \n" +
 "   ,-'             _/ / /       \n" +
@@ -63,7 +63,7 @@ public class StartProgramView extends View{
     }
 
     private void displayNextView(Player player) {
-        System.out.println("\n================================================"
+        this.console.println("\n================================================"
                          + "\nWelcome to Face The Dragon " + player.getName() + "!"
                          + "\nGood Luck and have fun!"
                          + "\n================================================");

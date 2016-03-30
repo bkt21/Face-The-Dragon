@@ -56,7 +56,7 @@ public class MapView extends View {
 
         try{
         while (!valid) {
-            System.out.println("\n" + this.promptMessage);
+            this.console.println("\n" + this.promptMessage);
             value = this.keyboard.readLine();
             value = value.trim();
 
@@ -103,19 +103,19 @@ public class MapView extends View {
     }
 
     private void moveNorth() {
-        System.out.println("\n***move North was called***");
+        this.console.println("\n***move North was called***");
     }
 
     private void moveSouth() {
-       System.out.println("\n***move South was called***");
+       this.console.println("\n***move South was called***");
     }
 
     private void moveEast() {
-        System.out.println("\n***move East was called***");
+        this.console.println("\n***move East was called***");
     }
 
     private void moveWest() {
-        System.out.println("\n***move West was called***");
+        this.console.println("\n***move West was called***");
     }
     
 }
