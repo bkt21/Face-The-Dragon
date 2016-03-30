@@ -8,6 +8,7 @@ package byui.cit260.FaceTheDragon.view;
 import byui.cit260.FaceTheDragon.model.Game;
 import byui.cit260.FaceTheDragon.model.InventoryItem;
 import byui.cit260.FaceTheDragon.model.Character;
+import byui.cit260.FaceTheDragon.model.Location;
 import facethedragon.FaceTheDragon;
 
 /**
@@ -86,20 +87,26 @@ class GameMenuView extends View {
         }
     }
 
-    private long displayMap(int[][] mapLocations ) {
+    private long displayMap() {
         StringBuilder line;
-        
+       
         Game game = FaceTheDragon.getCurrentGame();
         MapControl[] map = game.getMap();
+        Location[][] locations = map.getLocations();
         
         long total = 0;
-        for (int i = 0; i < mapLocations.length; i++) {
+        for (int i = 0; i < 5; i++) {
             this.console.println("|--------");
-            for (int j = 0; j < mapLocations[i].length; j++){
+            for (int j = 0; j < 5; j++){
                 this.console.println("|");
-                total += mapLocations[i][j];
-               if (mapLocations[i][j].visited){
-                   this.console.println(mapLocations[i][j].getMapSymbol);
+                total += locations[i][j];
+
+               if (locations[i][j].visited){
+                   this.console.println(locations[i][j].getMapSymbol);
+
+               if (locations[i][j].visited() != false){
+                   this.console.println(locations[i][j].getMapSymbol);
+
                } 
                else{
                    this.console.println("  ??  ");
