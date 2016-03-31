@@ -43,7 +43,7 @@ public class FaceTheDragon {
         try{
             FaceTheDragon.inFile = new BufferedReader(new InputStreamReader(System.in));
             
-            FaceTheDragon.outFile = new PrintWriter(this.console, true);
+            FaceTheDragon.outFile = new PrintWriter(System.out, true);
             
             String filePath = "log.txt";
             FaceTheDragon.logFile = new PrintWriter(filePath);

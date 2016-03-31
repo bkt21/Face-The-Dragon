@@ -101,11 +101,11 @@ class GameMenuView extends View {
                 this.console.println("|");
                 total += locations[i][j];
 
-               if (locations[i][j].visited){
-                   this.console.println(locations[i][j].getMapSymbol);
+               if (locations[i][j].isVisited()){
+                   this.console.println(locations[i][j].getMapSymbol());
 
-               if (locations[i][j].visited() != false){
-                   this.console.println(locations[i][j].getMapSymbol);
+               if (locations[i][j].isVisited() != false){
+                   this.console.println(locations[i][j].getMapSymbol());
 
                } 
                else{
