@@ -25,8 +25,8 @@ class MapControl {
         return map;
     }
 
-    static void moveCharacterToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    static void moveCharacterToStartingLocation(Map map) {        
+        
     }
 
     private static Scene[] createScene() {

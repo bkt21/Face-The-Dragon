@@ -55,11 +55,11 @@ public class GameControl {
         Map map = MapControl.createMap();
         game.setMap(map);
         
-        MapControl.moveCharacterToStartingLocation(map);
+        //MapControl.moveCharacterToStartingLocation(map);
     }
 
     public static InventoryItem[] createInventoryList(){
-        InventoryItem[] inventory = new InventoryItem[5];
+        InventoryItem[] inventory = new InventoryItem[6];
         
         InventoryItem redPotion = new InventoryItem();
         redPotion.setDescription("A magical Potion that can heal you");
@@ -90,8 +90,6 @@ public class GameControl {
         gold.setDescription("Gold ore to buy items with");
         gold.setQuantityInStock(0);
         inventory[items.gold.ordinal()] = gold;
-        
-        
         
         return inventory;
     }

@@ -56,7 +56,7 @@ public class MainMenuView extends View{
         GameControl.createNewGame(FaceTheDragon.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
         
     }
 

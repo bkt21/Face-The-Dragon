@@ -5,6 +5,7 @@
  */
 package byui.cit260.FaceTheDragon.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -23,6 +24,7 @@ public class Character implements Serializable{
    private int maxHealth;
    private int health;
    private int exp;
+   private Point coordinates;
    
    
 

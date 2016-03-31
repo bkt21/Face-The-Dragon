@@ -61,10 +61,6 @@ class GameMenuView extends View {
         }
         return false;
     }
-        
-  public void displayMenu() {
-        this.console.println("\n***displayMenu was called****");
-    }
 
     private void viewInventory() {
         StringBuilder line;
@@ -117,7 +113,10 @@ class GameMenuView extends View {
         return total;
     }
 
-    private void characterInfo(Character character) {
+    private void characterInfo() {
+        Game game = FaceTheDragon.getCurrentGame();
+        Character character = game.getCharacter();
+        
         this.console.println("Your Character info is: " 
                             + "\nName: " + character.getName()
                             + "\nAttack: " + character.getAttack() 

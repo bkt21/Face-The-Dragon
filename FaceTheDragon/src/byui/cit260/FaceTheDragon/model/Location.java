@@ -93,7 +93,7 @@ public class Location extends Map{
     }
 
     public void setScene(Scene scene) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.scene = scene;
     }
 
 }
