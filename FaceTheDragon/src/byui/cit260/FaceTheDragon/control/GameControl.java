@@ -62,32 +62,32 @@ public class GameControl {
         InventoryItem[] inventory = new InventoryItem[6];
         
         InventoryItem redPotion = new InventoryItem();
-        redPotion.setDescription("A magical Potion that can heal you");
+        redPotion.setDescription("Red Potion");
         redPotion.setQuantityInStock(0);
         inventory[items.redPotion.ordinal()] = redPotion;
         
         InventoryItem bluePotion = new InventoryItem();
-        bluePotion.setDescription("A magical Potion that can greatly heal you");
+        bluePotion.setDescription("Blue Potion");
         bluePotion.setQuantityInStock(0);
         inventory[items.bluePotion.ordinal()] = bluePotion;
         
         InventoryItem keys = new InventoryItem();
-        keys.setDescription("A way to open up locked doors");
+        keys.setDescription("Keys");
         keys.setQuantityInStock(0);
         inventory[items.keys.ordinal()] = keys;
         
         InventoryItem greenPotion = new InventoryItem();
-        greenPotion.setDescription("A magical Potion that can increase your max health");
+        greenPotion.setDescription("Green Potion");
         greenPotion.setQuantityInStock(0);
         inventory[items.greenPotion.ordinal()] = greenPotion;
         
         InventoryItem bloodPotion = new InventoryItem();
-        bloodPotion.setDescription("A magical Potion that can increase your attack");
+        bloodPotion.setDescription("Blood Potion");
         bloodPotion.setQuantityInStock(0);
         inventory[items.bloodPotion.ordinal()] = bloodPotion;
         
         InventoryItem gold = new InventoryItem();
-        gold.setDescription("Gold ore to buy items with");
+        gold.setDescription("Gold");
         gold.setQuantityInStock(0);
         inventory[items.gold.ordinal()] = gold;
         

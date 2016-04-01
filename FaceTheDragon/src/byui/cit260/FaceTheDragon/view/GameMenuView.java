@@ -77,7 +77,7 @@ class GameMenuView extends View {
         for(InventoryItem item : inventory) {
             line = new StringBuilder("                                      ");
             line.insert(0, item.getDescription());
-            line.insert(23, item.getQuantityInStock());
+            line.insert(28, item.getQuantityInStock());
             
             this.console.println(line.toString());
         }
@@ -110,6 +110,7 @@ class GameMenuView extends View {
                this.console.println("|");
             }
         }
+        }
         return total;
     }
 
@@ -119,12 +120,17 @@ class GameMenuView extends View {
         
         this.console.println("Your Character info is: " 
                             + "\nName: " + character.getName()
+                            + "\nLevel: " + character.getLevel()
                             + "\nAttack: " + character.getAttack() 
                             + "\nDefense: " + character.getDefense()
-                            + "\nLevel: " + character.getLevel()
                             + "\nGold: " + character.getGold()
-                            + "\nHealth: " + character.getHealth() + " out of " + character.getMaxHealth()
+                            + "\nHealth: " + character.getHealth() + "/" + character.getMaxHealth()
                             + "\nExperience: " + character.getExp());
+    }
+
+    private void displayHelp() {
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.display();
     }
 
 }
