@@ -113,6 +113,15 @@ public class Character implements Serializable{
     public void setExp(int exp) {
         this.exp = exp;
     }
+
+    public Point getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
+    }
+    
     
     
     

@@ -5,10 +5,12 @@
  */
 package byui.cit260.FaceTheDragon.view;
 
+import byui.cit260.FaceTheDragon.control.GameControl;
 import byui.cit260.FaceTheDragon.model.Game;
 import byui.cit260.FaceTheDragon.model.InventoryItem;
 import byui.cit260.FaceTheDragon.model.Character;
 import byui.cit260.FaceTheDragon.model.Location;
+import byui.cit260.FaceTheDragon.model.Map;
 import facethedragon.FaceTheDragon;
 
 /**
@@ -26,6 +28,7 @@ class GameMenuView extends View {
                   + "\nM - Move"
                   + "\nC - Character Info"
                   + "\nH - Help"
+                  + "\nS - Save Game"
                   + "\nQ - Quit"
                   + "\n----------------------------------");
     }
@@ -52,7 +55,7 @@ class GameMenuView extends View {
             case 'H':
                 this.displayHelp();
                 break;
-            case 'Q':
+            case 'S':
                 this.saveGame();
                 break;
             default:
@@ -83,42 +86,49 @@ class GameMenuView extends View {
         }
     }
 
-    private long displayMap() {
+    private void displayMap() {
         StringBuilder line;
        
         Game game = FaceTheDragon.getCurrentGame();
-        MapControl[] map = game.getMap();
+        Map map = game.getMap();
         Location[][] locations = map.getLocations();
         
-        long total = 0;
+        StringBuilder mapLine = null;
+        
+        this.console.println("\n          Map of Naynayheyhey\n");
+        line = new StringBuilder("                                      ");
+        line.insert(0,"1");
+        line.insert(10,"2");
+        line.insert(20,"3");
+        line.insert(30,"4");
+        line.insert(40,"5");
+        this.console.println(line.toString());
+        
+        String total = null;
         for (int i = 0; i < 5; i++) {
-            this.console.println("|--------");
+            this.console.println("------------------------------------------\n|");
+            this.console.println(locations[i][i].getMapSymbol());
             for (int j = 0; j < 5; j++){
-                this.console.println("|");
-                total += locations[i][j];
 
                if (locations[i][j].isVisited()){
-                   this.console.println(locations[i][j].getMapSymbol());
-
-               if (locations[i][j].isVisited() != false){
-                   this.console.println(locations[i][j].getMapSymbol());
-
-               } 
-               else{
-                   this.console.println("  ??  ");
+                   total += locations[i][j].getMapSymbol();
+                   //mapLine.insert(0,locations[i][j].getMapSymbol());
                }
-               this.console.println("|");
+               else{
+                   total += "  ??  ";
+               }
+//this.console.println(mapLine.toString());
             }
+            total += "|";
+            this.console.println(total);
         }
-        }
-        return total;
     }
 
     private void characterInfo() {
         Game game = FaceTheDragon.getCurrentGame();
         Character character = game.getCharacter();
         
-        this.console.println("Your Character info is: " 
+        this.console.println("\n\nYour Character info is: " 
                             + "\nName: " + character.getName()
                             + "\nLevel: " + character.getLevel()
                             + "\nAttack: " + character.getAttack() 

@@ -7,6 +7,7 @@ package byui.cit260.FaceTheDragon.model;
 
 import byui.cit260.FaceTheDragon.view.View;
 import byui.cit260.FaceTheDragon.control.GameControl;
+import byui.cit260.FaceTheDragon.control.MapControl;
 import java.io.Serializable;
 import java.util.Objects;
 /**
@@ -52,7 +53,7 @@ public class Map implements Serializable{
         
         Scene[] scenes = createScenes();
         
-        GameControl.assignScenesToLocations(map,scenes);
+        MapControl.assignScenesToLocations(map,scenes);
         
         return map;
     }

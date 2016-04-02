@@ -5,15 +5,19 @@
  */
 package byui.cit260.FaceTheDragon.control;
 
+import byui.cit260.FaceTheDragon.model.Game;
 import byui.cit260.FaceTheDragon.model.Location;
 import byui.cit260.FaceTheDragon.model.Map;
 import byui.cit260.FaceTheDragon.model.Scene;
+import byui.cit260.FaceTheDragon.model.Scene;
+import facethedragon.FaceTheDragon;
+import java.awt.Point;
 
 /**
  *
  * @author Murray
  */
-class MapControl {
+public class MapControl {
 
     static Map createMap() {
         Map map = new Map(5, 5);
@@ -26,7 +30,12 @@ class MapControl {
     }
 
     static void moveCharacterToStartingLocation(Map map) {        
+        Game game = FaceTheDragon.getCurrentGame();
         
+        byui.cit260.FaceTheDragon.model.Character character = game.getCharacter();
+        
+        Point startingLocation = new Point(0,0);
+        character.setCoordinates(startingLocation);
     }
 
     private static Scene[] createScene() {
@@ -37,12 +46,14 @@ class MapControl {
         farmScene.setMapSymbol(" FA ");
         farmScene.setBlocked(false);
         scenes[SceneType.farm.ordinal()] = farmScene;
+        farmScene.setVisited(true);
         
         Scene forestScene = new Scene();
         forestScene.setDescription("");
         forestScene.setMapSymbol(" FOR ");
         forestScene.setBlocked(false);
         scenes[SceneType.forest.ordinal()] = forestScene;
+        farmScene.setVisited(false);
         
         Scene lakeScene = new Scene();
         lakeScene.setDescription("");
@@ -213,7 +224,8 @@ class MapControl {
         dragonLair;
     }
 
-    private static void assignScenesToLocations(Map map, Scene[] scenes) {
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        
         Location[][] locations = map.getLocations();
         
         locations[0][0].setScene(scenes[SceneType.farm.ordinal()]);
@@ -241,6 +253,14 @@ class MapControl {
         locations[4][2].setScene(scenes[SceneType.abandonedBuilding.ordinal()]);
         locations[4][3].setScene(scenes[SceneType.forest12.ordinal()]);
         locations[4][4].setScene(scenes[SceneType.dragonLair.ordinal()]);
+        
+        map.setLocations(locations);
+        
+        Game game = new Game();
+        FaceTheDragon.setCurrentGame(game);
+        
+        game.setMap(map);
+        
     }
     
     private static int mapExplored(Map map){

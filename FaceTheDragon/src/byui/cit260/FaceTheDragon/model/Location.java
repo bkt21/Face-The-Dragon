@@ -17,6 +17,7 @@ public class Location extends Map{
     private int column;
     private boolean visited;
     private Scene scene;
+    private String mapSymbol;
     private ArrayList<Character> characters;
     
     
@@ -49,6 +50,14 @@ public class Location extends Map{
 
     public void setVisited(boolean visited) {
         this.visited = visited;
+    }
+
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
     }
 
     
