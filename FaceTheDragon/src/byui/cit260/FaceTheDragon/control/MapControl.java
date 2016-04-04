@@ -45,8 +45,9 @@ public class MapControl {
         farmScene.setDescription("");
         farmScene.setMapSymbol(" FA ");
         farmScene.setBlocked(false);
-        scenes[SceneType.farm.ordinal()] = farmScene;
         farmScene.setVisited(true);
+        scenes[SceneType.farm.ordinal()] = farmScene;
+        
         
         Scene forestScene = new Scene();
         forestScene.setDescription("");
@@ -256,8 +257,7 @@ public class MapControl {
         
         map.setLocations(locations);
         
-        Game game = new Game();
-        FaceTheDragon.setCurrentGame(game);
+        Game game = FaceTheDragon.getCurrentGame();
         
         game.setMap(map);
         

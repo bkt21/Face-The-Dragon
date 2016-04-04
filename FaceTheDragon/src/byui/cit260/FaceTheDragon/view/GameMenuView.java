@@ -47,7 +47,7 @@ class GameMenuView extends View {
                 this.viewInventory();
                 break;
             case 'M':
-                this.move();
+                //this.move();
                 break;
             case 'C':
                 this.characterInfo();
@@ -56,7 +56,7 @@ class GameMenuView extends View {
                 this.displayHelp();
                 break;
             case 'S':
-                this.saveGame();
+                //this.saveGame();
                 break;
             default:
                 this.console.println("\n*** Invalid Selection**** Try Again");
@@ -93,7 +93,6 @@ class GameMenuView extends View {
         Map map = game.getMap();
         Location[][] locations = map.getLocations();
         
-        StringBuilder mapLine = null;
         
         this.console.println("\n          Map of Naynayheyhey\n");
         line = new StringBuilder("                                      ");
@@ -106,8 +105,8 @@ class GameMenuView extends View {
         
         String total = null;
         for (int i = 0; i < 5; i++) {
+            total = null;
             this.console.println("------------------------------------------\n|");
-            this.console.println(locations[i][i].getMapSymbol());
             for (int j = 0; j < 5; j++){
 
                if (locations[i][j].isVisited()){
@@ -119,9 +118,11 @@ class GameMenuView extends View {
                }
 //this.console.println(mapLine.toString());
             }
-            total += "|";
-            this.console.println(total);
+            total += "|\n";
+        this.console.println(total);
         }
+        
+
     }
 
     private void characterInfo() {

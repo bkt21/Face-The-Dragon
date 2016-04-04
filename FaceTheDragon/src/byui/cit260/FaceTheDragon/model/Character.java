@@ -29,7 +29,7 @@ public class Character implements Serializable{
    
 
     public Character() {
-        this.name = "";
+        this.name = null;
         this.description = "";
         this.attack = 10;
         this.defense = 5;
