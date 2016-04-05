@@ -13,6 +13,7 @@ import java.io.Serializable;
 public class Scene extends Location{
     private String description;
     private boolean blocked;
+    private String mapSymbol;
 
     public Scene() {
         super();
@@ -32,6 +33,14 @@ public class Scene extends Location{
 
     public void setBlocked(boolean blocked) {
         this.blocked = blocked;
+    }
+
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
     }
     
     

@@ -45,7 +45,6 @@ public class MapControl {
         farmScene.setDescription("");
         farmScene.setMapSymbol(" FA ");
         farmScene.setBlocked(false);
-        farmScene.setVisited(true);
         scenes[SceneType.farm.ordinal()] = farmScene;
         
         
@@ -54,7 +53,6 @@ public class MapControl {
         forestScene.setMapSymbol(" FOR ");
         forestScene.setBlocked(false);
         scenes[SceneType.forest.ordinal()] = forestScene;
-        farmScene.setVisited(false);
         
         Scene lakeScene = new Scene();
         lakeScene.setDescription("");
@@ -230,6 +228,8 @@ public class MapControl {
         Location[][] locations = map.getLocations();
         
         locations[0][0].setScene(scenes[SceneType.farm.ordinal()]);
+        locations[0][0].setVisited(true);
+        
         locations[0][1].setScene(scenes[SceneType.forest.ordinal()]);
         locations[0][2].setScene(scenes[SceneType.lake.ordinal()]);
         locations[0][3].setScene(scenes[SceneType.forest2.ordinal()]);

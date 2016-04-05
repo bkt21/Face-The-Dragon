@@ -103,14 +103,14 @@ class GameMenuView extends View {
         line.insert(40,"5");
         this.console.println(line.toString());
         
-        String total = null;
+        String total;
         for (int i = 0; i < 5; i++) {
-            total = null;
+            total = "";
             this.console.println("------------------------------------------\n|");
             for (int j = 0; j < 5; j++){
 
                if (locations[i][j].isVisited()){
-                   total += locations[i][j].getMapSymbol();
+                   total += locations[i][j].getScene().getMapSymbol();
                    //mapLine.insert(0,locations[i][j].getMapSymbol());
                }
                else{
